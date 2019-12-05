@@ -1,5 +1,7 @@
-<Flowers>
-    <GardenRose id = '1'>
+<flowers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ns="http://www.example.com/flowers"
+          xsi:schemaLocation="http://www.epam.com/test/flowers flowers.xsd">
+    <Hybridrose id = '1'>
         <name> Rose</name>
         <soil>Ground soil</soil>
         <color>White</color>
@@ -10,15 +12,6 @@
         <budType>From small to huge with central bud</budType>
         <gardenRoseSort>Green rose</gardenRoseSort>
         <bushType>Climbing bush</bushType>
-    </GardenRose>
-    <Rose>
-        <name> Rose </name>
-        <soil>Ground soil</soil>
-        <color>White</color>
-        <growingTips>Depends on Type and Sort</growingTips>
-        <multiplying>Seeds multiplying</multiplying>
-        <blossomTime>Depends on Type and Sort</blossomTime>
-        <petalQuantity>10</petalQuantity>
-        <budType>Depends on Type and Sort</budType>
-    </Rose>
-</Flowers>
+    </Hybridrose>
+
+</flowers>
