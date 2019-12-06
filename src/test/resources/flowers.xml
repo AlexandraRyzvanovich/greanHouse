@@ -2,61 +2,97 @@
 <flowers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://www.epam.com/flowers"
          xsi:schemaLocation="http://www.epam.com/flower flowers.xsd">
-    <rose login="rose0000" bud-Type="round">
+    <rose login="rose0000">
         <name>my Favorite Rose 0</name>
         <soil>podzolic</soil>
         <color>white</color>
         <growing-Tips>not specified</growing-Tips>
         <multiplying>seeds</multiplying>
+        <blossom-Time>winter</blossom-Time>
+        <petal-Quantity>5</petal-Quantity>
+        <bud-Type>round</bud-Type>
     </rose>
-    <rose login="rose0001" bud-Type="oval">
+
+    <rose login="rose0001" >
         <name>my Favorite Rose 1</name>
         <soil>podzolic</soil>
         <color>white</color>
         <growing-Tips>careful</growing-Tips>
         <multiplying>leaves</multiplying>
+        <blossom-Time>winter</blossom-Time>
+        <petal-Quantity>5</petal-Quantity>
+        <bud-Type>oval</bud-Type>
     </rose>
-    <garden-Rose login="rose0002" garden-Rose-Sort="fransis lubrel" bud-Type="oval">
+
+    <garden-Rose login="rose0002" >
         <name>my Favorite Rose 2</name>
         <soil>sod podzolic</soil>
         <color>white</color>
         <growing-Tips>not specified</growing-Tips>
         <multiplying>seeds</multiplying>
+        <blossom-Time>middle summer</blossom-Time>
+        <petal-Quantity></petal-Quantity>
+        <bud-Type>square</bud-Type>
+        <bush-Type>climbing</bush-Type>
     </garden-Rose>
-    <garden-Rose login="rose0003" garden-Rose-Sort="rose de rescht" bud-Type="round and little square">
+
+    <garden-Rose login="rose0003" garden-Rose-Sort="rose de rescht" >
         <name>my Favorite Rose 3</name>
         <soil>podzolic</soil>
         <color>red</color>
         <growing-Tips>not specified</growing-Tips>
         <multiplying>leaves</multiplying>
+        <blossom-Time>spring</blossom-Time>
+        <petal-Quantity>12</petal-Quantity>
+        <bud-Type>huge oval</bud-Type>
+        <bush-Type>single</bush-Type>
     </garden-Rose>
-    <hybrid-Rose login="rose0004" hybrid-RoseSubSort="cluster flowered" bud-Type="round" year-Of-Selection="1999">
+
+    <hybrid-Rose login="rose0004" >
         <name>my Favorite Rose 4</name>
         <soil>sod podzolic</soil>
         <color>red</color>
         <growing-Tips>poor once a week</growing-Tips>
         <multiplying>seeds</multiplying>
+        <blossom-Time>autumn</blossom-Time>
+        <petal-Quantity>13</petal-Quantity>
+        <bud-Type>round</bud-Type>
+        <year-Of-Selection>1880</year-Of-Selection>
     </hybrid-Rose>
-    <hybrid-Rose login="rose0005" hybrid-RoseSubSort="large flowered" bud-Type="small oval" year-Of-Selection="2000">
+
+    <hybrid-Rose login="rose0005" hybrid-RoseSubSort="large flowered" >
         <name>my Favorite Rose 5</name>
         <soil>podzolic</soil>
         <color>yellow</color>
         <growing-Tips>not specified</growing-Tips>
         <multiplying>cuttage</multiplying>
+        <blossom-Time>spring</blossom-Time>
+        <petal-Quantity>8</petal-Quantity>
+        <bud-Type>oval</bud-Type>
+        <year-Of-Selection>1999</year-Of-Selection>
     </hybrid-Rose>
-    <wild-Rose login="rose0006" wild-Rose-Sort="rugosa rose" fruits-Form="round" bud-Type="oval huge">
+
+    <wild-Rose login="rose0006" >
         <name>my Favorite Rose 6</name>
         <soil>podzolic</soil>
         <color>yellow</color>
         <growing-Tips>poor 2 times a day</growing-Tips>
         <multiplying>cuttage</multiplying>
+        <blossom-Time>spring</blossom-Time>
+        <petal-Quantity>25</petal-Quantity>
+        <bud-Type>round with inside round bud</bud-Type>
+        <fruits-Form>round</fruits-Form>
     </wild-Rose>
-    <wild-Rose login="rose0007" wild-Rose-Sort="foliolosa rose" fruits-Form="square" bud-Type="average">
+    <wild-Rose login="rose0007" wild-Rose-Sort="foliolosa rose" >
         <name>my Favorite Rose 7</name>
         <soil>sod podzolic</soil>
         <color>red</color>
         <growing-Tips>not specified</growing-Tips>
         <multiplying>leaves</multiplying>
+        <blossom-Time>summer</blossom-Time>
+        <petal-Quantity>13</petal-Quantity>
+        <bud-Type>oval small</bud-Type>
+        <fruits-Form>small round</fruits-Form>
     </wild-Rose>
 
 </flowers>

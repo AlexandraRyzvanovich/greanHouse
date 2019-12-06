@@ -19,9 +19,9 @@ import java.util.Objects;
         WildRose.class
 })
 public class Rose extends Flower {
-    @XmlElement(required = true)
+    @XmlAttribute(name = "blossom-Time")
     String blossomTime;
-    @XmlElement(required = true)
+    @XmlAttribute(required = true)
     int petalQuantity;
     @XmlElement(required = true)
     String budType;
