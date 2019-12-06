@@ -5,22 +5,66 @@ import entity.enums.Multiplying;
 import entity.enums.Soil;
 import entity.enums.WildRoseSort;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
+import java.util.Objects;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Wild-Rose", propOrder = {
-        "wild-Rose-Sort",
-        "fruits-Form"
-})
 public class WildRose extends Rose {
-    @XmlElement(name = "average-mark")
     WildRoseSort wildRoseSort;
-    String fruitsForm;
+    String fruitForm;
 
     public WildRose(long id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
         super(id, name, soil, color, growingTips, multiplying);
+    }
+
+    public WildRose(long id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, WildRoseSort wildRoseSort, String fruitForm) {
+        super(id, name, soil, color, growingTips, multiplying);
+        this.wildRoseSort = wildRoseSort;
+        this.fruitForm = fruitForm;
+    }
+
+    public WildRose() {
+
+    }
+
+    public WildRoseSort getWildRoseSort() {
+        return wildRoseSort;
+    }
+
+    public void setWildRoseSort(WildRoseSort wildRoseSort) {
+        this.wildRoseSort = wildRoseSort;
+    }
+
+    public String getFruitForm() {
+        return fruitForm;
+    }
+
+    public void setFruitForm(String fruitForm) {
+        this.fruitForm = fruitForm;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof WildRose)) return false;
+        if (!super.equals(o)) return false;
+        WildRose wildRose = (WildRose) o;
+        return getWildRoseSort() == wildRose.getWildRoseSort() &&
+                getFruitForm().equals(wildRose.getFruitForm());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getWildRoseSort(), getFruitForm());
+    }
+
+    @Override
+    public String toString() {
+        return "WildRose{" +
+                "wildRoseSort=" + wildRoseSort +
+                ", fruitForm='" + fruitForm + '\'' +
+                ", blossomTime='" + blossomTime + '\'' +
+                ", petalQuantity=" + petalQuantity +
+                ", budType='" + budType + '\'' +
+                '}';
     }
 }

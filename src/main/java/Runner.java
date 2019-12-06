@@ -1,3 +1,4 @@
+import JAXBParser.UnMarshalJAXB;
 import errorHandler.FlowerErrorHandler;
 import validator.ValidatorSAX;
 
@@ -8,5 +9,9 @@ public class Runner {
         String pathXML = "./src/test/resources/flowers.xml";
         String pathXSD = "src/main/resources/flowers.xsd";
         boolean res = validatorSAX.validateXML(pathXML, pathXSD);
+        UnMarshalJAXB u = new UnMarshalJAXB();
+        u.parse();
+
+
     }
 }

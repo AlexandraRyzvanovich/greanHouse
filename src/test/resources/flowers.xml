@@ -6,93 +6,93 @@
         <name>my Favorite Rose 0</name>
         <soil>podzolic</soil>
         <color>white</color>
-        <growing-Tips>not specified</growing-Tips>
+        <growing-tips>not specified</growing-tips>
         <multiplying>seeds</multiplying>
-        <blossom-Time>winter</blossom-Time>
-        <petal-Quantity>5</petal-Quantity>
-        <bud-Type>round</bud-Type>
+        <blossom-time>winter</blossom-time>
+        <petal-quantity>5</petal-quantity>
+        <bud-type>round</bud-type>
     </rose>
 
     <rose login="rose0001" >
         <name>my Favorite Rose 1</name>
         <soil>podzolic</soil>
         <color>white</color>
-        <growing-Tips>careful</growing-Tips>
+        <growing-tips>careful</growing-tips>
         <multiplying>leaves</multiplying>
-        <blossom-Time>winter</blossom-Time>
-        <petal-Quantity>5</petal-Quantity>
-        <bud-Type>oval</bud-Type>
+        <blossom-time>winter</blossom-time>
+        <petal-quantity>5</petal-quantity>
+        <bud-type>oval</bud-type>
     </rose>
 
-    <garden-Rose login="rose0002" >
+    <garden-rose login="rose0002" >
         <name>my Favorite Rose 2</name>
         <soil>sod podzolic</soil>
         <color>white</color>
-        <growing-Tips>not specified</growing-Tips>
+        <growing-tips>not specified</growing-tips>
         <multiplying>seeds</multiplying>
-        <blossom-Time>middle summer</blossom-Time>
-        <petal-Quantity></petal-Quantity>
-        <bud-Type>square</bud-Type>
-        <bush-Type>climbing</bush-Type>
-    </garden-Rose>
+        <blossom-time>middle summer</blossom-time>
+        <petal-quantity></petal-quantity>
+        <bud-type>square</bud-type>
+        <bush-type>climbing</bush-type>
+    </garden-rose>
 
-    <garden-Rose login="rose0003" garden-Rose-Sort="rose de rescht" >
+    <garden-rose login="rose0003" garden-rose-sort="rose de rescht" >
         <name>my Favorite Rose 3</name>
         <soil>podzolic</soil>
         <color>red</color>
-        <growing-Tips>not specified</growing-Tips>
+        <growing-tips>not specified</growing-tips>
         <multiplying>leaves</multiplying>
-        <blossom-Time>spring</blossom-Time>
-        <petal-Quantity>12</petal-Quantity>
-        <bud-Type>huge oval</bud-Type>
-        <bush-Type>single</bush-Type>
-    </garden-Rose>
+        <blossom-time>spring</blossom-time>
+        <petal-quantity>12</petal-quantity>
+        <bud-type>huge oval</bud-type>
+        <bush-type>single</bush-type>
+    </garden-rose>
 
-    <hybrid-Rose login="rose0004" >
+    <hybrid-rose login="rose0004" >
         <name>my Favorite Rose 4</name>
         <soil>sod podzolic</soil>
         <color>red</color>
-        <growing-Tips>poor once a week</growing-Tips>
+        <growing-tips>poor once a week</growing-tips>
         <multiplying>seeds</multiplying>
-        <blossom-Time>autumn</blossom-Time>
-        <petal-Quantity>13</petal-Quantity>
-        <bud-Type>round</bud-Type>
-        <year-Of-Selection>1880</year-Of-Selection>
-    </hybrid-Rose>
+        <blossom-time>autumn</blossom-time>
+        <petal-quantity>13</petal-quantity>
+        <bud-type>round</bud-type>
+        <year-of-selection>1880</year-of-selection>
+    </hybrid-rose>
 
-    <hybrid-Rose login="rose0005" hybrid-RoseSubSort="large flowered" >
+    <hybrid-rose login="rose0005" hybrid-rose-subSort="large flowered" >
         <name>my Favorite Rose 5</name>
         <soil>podzolic</soil>
         <color>yellow</color>
-        <growing-Tips>not specified</growing-Tips>
+        <growing-tips>not specified</growing-tips>
         <multiplying>cuttage</multiplying>
-        <blossom-Time>spring</blossom-Time>
-        <petal-Quantity>8</petal-Quantity>
-        <bud-Type>oval</bud-Type>
-        <year-Of-Selection>1999</year-Of-Selection>
-    </hybrid-Rose>
+        <blossom-time>spring</blossom-time>
+        <petal-quantity>8</petal-quantity>
+        <bud-type>oval</bud-type>
+        <year-of-selection>1999</year-of-selection>
+    </hybrid-rose>
 
-    <wild-Rose login="rose0006" >
+    <wild-rose login="rose0006" >
         <name>my Favorite Rose 6</name>
         <soil>podzolic</soil>
         <color>yellow</color>
-        <growing-Tips>poor 2 times a day</growing-Tips>
+        <growing-tips>poor 2 times a day</growing-tips>
         <multiplying>cuttage</multiplying>
-        <blossom-Time>spring</blossom-Time>
-        <petal-Quantity>25</petal-Quantity>
-        <bud-Type>round with inside round bud</bud-Type>
-        <fruits-Form>round</fruits-Form>
-    </wild-Rose>
-    <wild-Rose login="rose0007" wild-Rose-Sort="foliolosa rose" >
+        <blossom-time>spring</blossom-time>
+        <petal-quantity>25</petal-quantity>
+        <bud-type>round with inside round bud</bud-type>
+        <fruit-Form>round</fruit-Form>
+    </wild-rose>
+    <wild-rose login="rose0007" wild-rose-sort="foliolosa rose" >
         <name>my Favorite Rose 7</name>
         <soil>sod podzolic</soil>
         <color>red</color>
-        <growing-Tips>not specified</growing-Tips>
+        <growing-tips>not specified</growing-tips>
         <multiplying>leaves</multiplying>
-        <blossom-Time>summer</blossom-Time>
-        <petal-Quantity>13</petal-Quantity>
-        <bud-Type>oval small</bud-Type>
-        <fruits-Form>small round</fruits-Form>
-    </wild-Rose>
+        <blossom-time>summer</blossom-time>
+        <petal-quantity>13</petal-quantity>
+        <bud-type>oval small</bud-type>
+        <fruit-Form>small round</fruit-Form>
+    </wild-rose>
 
 </flowers>

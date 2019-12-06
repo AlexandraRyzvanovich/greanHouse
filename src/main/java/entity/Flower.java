@@ -4,37 +4,15 @@ import entity.enums.Color;
 import entity.enums.Multiplying;
 import entity.enums.Soil;
 
-import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Objects;
 
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Flower", propOrder = {
-        "name",
-        "soil",
-        "color",
-        "growingTips",
-        "multiplying"
-})
-@XmlSeeAlso({
-        Rose.class
-})
 abstract public class Flower {
-    @XmlAttribute(required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlID
+
     private long id;
-    @XmlElement(name = "name", required = true)
     private String name;
-    @XmlElement(name="soil", required = true)
     private Soil soil;
-    @XmlElement(name = "color", required = true)
     private Color color;
-    @XmlElement(name = "growing-Tips", required = true)
     private String growingTips;
-    @XmlElement(name = "multiplying", required = true)
     private Multiplying multiplying;
 
     public Flower(){

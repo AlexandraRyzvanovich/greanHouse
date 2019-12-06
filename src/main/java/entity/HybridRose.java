@@ -5,19 +5,11 @@ import entity.enums.HybridRoseSubSort;
 import entity.enums.Multiplying;
 import entity.enums.Soil;
 
-import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Hybrid-Rose", propOrder = {
-        "hybrid-RoseSubSort",
-        "year-Of-Selection"
-})
+
 public class HybridRose extends Rose {
-    @XmlElement(required = true)
     HybridRoseSubSort hybridRoseSubSort;
-    @XmlElement(name = "year-Of-Selection")
     private int yearOfSelection;
 
     public HybridRose(long id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
@@ -28,6 +20,10 @@ public class HybridRose extends Rose {
         super(id, name, soil, color, growingTips, multiplying);
         this.hybridRoseSubSort = hybridRoseSubSort;
         this.yearOfSelection = yearOfSelection;
+    }
+
+    public HybridRose() {
+
     }
 
     public HybridRoseSubSort getHybridRoseSubSort() {

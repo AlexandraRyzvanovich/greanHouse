@@ -7,23 +7,9 @@ import entity.enums.Soil;
 import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Rose", propOrder = {
-        "blossomTime",
-        "petalQuantity",
-        "budType"
-})
-@XmlSeeAlso({
-        GardenRose.class,
-        HybridRose.class,
-        WildRose.class
-})
 public class Rose extends Flower {
-    @XmlAttribute(name = "blossom-Time")
     String blossomTime;
-    @XmlAttribute(required = true)
     int petalQuantity;
-    @XmlElement(required = true)
     String budType;
 
     public Rose(long id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
@@ -35,6 +21,10 @@ public class Rose extends Flower {
         this.blossomTime = blossomTime;
         this.petalQuantity = petalQuantity;
         this.budType = budType;
+    }
+
+    public Rose() {
+
     }
 
     public String getBlossomTime() {
