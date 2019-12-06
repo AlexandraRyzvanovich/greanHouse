@@ -1,17 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <flowers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:ns="http://www.example.com/flowers"
-          xsi:schemaLocation="http://www.epam.com/test/flowers flowers.xsd">
-    <Hybridrose id = '1'>
-        <name> Rose</name>
-        <soil>Ground soil</soil>
-        <color>White</color>
-        <growingTips>Grow in warm climate and cut once a year.</growingTips>
-        <multiplying>Seeds multiplying</multiplying>
-        <blossomTime>all year round</blossomTime>
-        <petalQuantity>10</petalQuantity>
-        <budType>From small to huge with central bud</budType>
-        <gardenRoseSort>Green rose</gardenRoseSort>
-        <bushType>Climbing bush</bushType>
-    </Hybridrose>
+         xmlns="http://www.epam.com/flowers"
+         xsi:schemaLocation="http://www.epam.com/flower flowers.xsd">
+    <rose login="rose0000">
+        <name>my Favorite Rose 0</name>
+        <soil>podzolic</soil>
+        <color>white</color>
+        <growingTips>not specified</growingTips>
+        <multiplying>seeds</multiplying>
+    </rose>
+    <rose login="rose0001">
+        <name>my Favorite Rose 1</name>
+        <soil>podzolic</soil>
+        <color>white</color>
+        <growingTips>careful</growingTips>
+        <multiplying>leaves</multiplying>
+    </rose>
+    <gardenRose login="rose0002" gardenRoseSort="fransis lubrel">
+        <name>my Favorite Rose 2</name>
+        <soil>sod podzolic</soil>
+        <color>white</color>
+        <growingTips>not specified</growingTips>
+        <multiplying>seeds</multiplying>
+    </gardenRose>
+    <gardenRose login="rose0003" gardenRoseSort="rose de rescht">
+        <name>my Favorite Rose 3</name>
+        <soil>podzolic</soil>
+        <color>red</color>
+        <growingTips>not specified</growingTips>
+        <multiplying>leaves</multiplying>
+    </gardenRose>
+    <hybridRose login="rose0004" hybridRoseSubSort="cluster flowered">
+        <name>my Favorite Rose 4</name>
+        <soil>sod podzolic</soil>
+        <color>red</color>
+        <growingTips>poor once a week</growingTips>
+        <multiplying>seeds</multiplying>
+    </hybridRose>
+    <hybridRose login="rose0005" hybridRoseSubSort="large flowered">
+        <name>my Favorite Rose 5</name>
+        <soil>podzolic</soil>
+        <color>yellow</color>
+        <growingTips>not specified</growingTips>
+        <multiplying>cuttage</multiplying>
+    </hybridRose>
+    <wildRose login="rose0006" wildRoseSort="rugosa rose" fruitsForm="round">
+        <name>my Favorite Rose 6</name>
+        <soil>podzolic</soil>
+        <color>yellow</color>
+        <growingTips>poor 2 times a day</growingTips>
+        <multiplying>cuttage</multiplying>
+    </wildRose>
+    <wildRose login="rose0007" wildRoseSort="foliolosa rose" fruitsForm="square">
+        <name>my Favorite Rose 7</name>
+        <soil>sod podzolic</soil>
+        <color>red</color>
+        <growingTips>not specified</growingTips>
+        <multiplying>leaves</multiplying>
+    </wildRose>
 
 </flowers>

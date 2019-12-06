@@ -1,5 +1,6 @@
 package validator;
 
+import errorHandler.FlowerErrorHandler;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
@@ -20,7 +21,7 @@ public class ValidatorSAX {
         this.errorHandler = errorHandler;
     }
 
-    public void validateXML(String fileName, String schemaName){
+    public Boolean validateXML(String fileName, String schemaName){
         File schemaLocation = new File(schemaName);
         try{
             Schema schema = factory.newSchema(schemaLocation);
@@ -28,13 +29,15 @@ public class ValidatorSAX {
             validator.setErrorHandler(errorHandler);
             Source source = new StreamSource(fileName);
             validator.validate(source);
-            System.out.println(fileName + " is valid.");
         } catch (SAXException e) {
             System.err.print("validation "+ fileName + " is not valid because "
                     + e.getMessage());
+            return false;
         } catch (IOException e) {
             System.err.print(fileName + " is not valid because "
                     + e.getMessage());
+            return false;
         }
+        return true;
     }
 }

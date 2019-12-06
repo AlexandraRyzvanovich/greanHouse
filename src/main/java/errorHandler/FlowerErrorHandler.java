@@ -1,4 +1,4 @@
-package validator;
+package errorHandler;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,5 +22,4 @@ public class FlowerErrorHandler extends DefaultHandler {
     private String getLineAddress(SAXParseException e) {
         return e.getLineNumber() + " : " + e.getColumnNumber();
     }
-
 }
