@@ -5,18 +5,14 @@ import entity.enums.Multiplying;
 import entity.enums.Soil;
 import entity.enums.WildRoseSort;
 
-import javax.xml.bind.annotation.*;
+
 import java.util.Objects;
 
 public class WildRose extends Rose {
-    WildRoseSort wildRoseSort;
-    String fruitForm;
+    private WildRoseSort wildRoseSort;
+    private String fruitForm;
 
-    public WildRose(long id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
-        super(id, name, soil, color, growingTips, multiplying);
-    }
-
-    public WildRose(long id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, WildRoseSort wildRoseSort, String fruitForm) {
+    public WildRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, WildRoseSort wildRoseSort, String fruitForm) {
         super(id, name, soil, color, growingTips, multiplying);
         this.wildRoseSort = wildRoseSort;
         this.fruitForm = fruitForm;
@@ -31,7 +27,11 @@ public class WildRose extends Rose {
     }
 
     public void setWildRoseSort(WildRoseSort wildRoseSort) {
-        this.wildRoseSort = wildRoseSort;
+        if(wildRoseSort == null){
+            this.wildRoseSort = WildRoseSort.FOLIOLOSA;
+        }else {
+            this.wildRoseSort = wildRoseSort;
+        }
     }
 
     public String getFruitForm() {
@@ -62,9 +62,6 @@ public class WildRose extends Rose {
         return "WildRose{" +
                 "wildRoseSort=" + wildRoseSort +
                 ", fruitForm='" + fruitForm + '\'' +
-                ", blossomTime='" + blossomTime + '\'' +
-                ", petalQuantity=" + petalQuantity +
-                ", budType='" + budType + '\'' +
                 '}';
     }
 }

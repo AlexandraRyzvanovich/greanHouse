@@ -1,5 +1,10 @@
 package entity.enums;
 
 public enum Multiplying {
-    LEAVES_MULTIPLYING, CUTTAGE_MULTIPLYING, SEEDS_MULTIPLYING
+    LEAVES("leaves"), CUTTAGE("cuttage"), SEEDS("seeds");
+
+    private String value;
+    Multiplying(String value){
+        this.value = value;
+    }
 }

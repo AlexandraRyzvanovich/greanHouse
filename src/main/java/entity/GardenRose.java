@@ -4,14 +4,10 @@ import entity.enums.*;
 import java.util.Objects;
 
 public class GardenRose extends Rose {
-    GardenRoseSort gardenRoseSort;
-    BushType bushType;
+    private GardenRoseSort gardenRoseSort;
+    private BushType bushType;
 
-    public GardenRose(long id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
-        super(id, name, soil, color, growingTips, multiplying);
-    }
-
-    public GardenRose(long id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, GardenRoseSort gardenRoseSort, BushType bushType) {
+    public GardenRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, GardenRoseSort gardenRoseSort, BushType bushType) {
         super(id, name, soil, color, growingTips, multiplying);
         this.gardenRoseSort = gardenRoseSort;
         this.bushType = bushType;
@@ -26,7 +22,11 @@ public class GardenRose extends Rose {
     }
 
     public void setGardenRoseSort(GardenRoseSort gardenRoseSort) {
-        this.gardenRoseSort = gardenRoseSort;
+        if(gardenRoseSort==null){
+            this.gardenRoseSort = GardenRoseSort.BANKY;
+        }else {
+            this.gardenRoseSort = gardenRoseSort;
+        }
     }
 
     public BushType getBushType() {
@@ -57,9 +57,6 @@ public class GardenRose extends Rose {
         return "GardenRose{" +
                 "gardenRoseSort=" + gardenRoseSort +
                 ", bushType=" + bushType +
-                ", blossomTime='" + blossomTime + '\'' +
-                ", petalQuantity=" + petalQuantity +
-                ", budType='" + budType + '\'' +
                 '}';
     }
 }

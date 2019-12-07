@@ -1,5 +1,13 @@
 package entity.enums;
 
 public enum GardenRoseSort {
-    ROSE_DE_RESCHT, FRANSIS_LUBREL, LADY_BANKY, GREEN_ROSE
+    RESCHT("rose de rescht"),
+    FRANSIS("fransis lubrel"),
+    BANKY("lady banky");
+
+    private String value;
+
+    GardenRoseSort(String value){
+        this.value = value;
+    }
 }

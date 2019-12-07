@@ -9,14 +9,11 @@ import java.util.Objects;
 
 
 public class HybridRose extends Rose {
-    HybridRoseSubSort hybridRoseSubSort;
-    private int yearOfSelection;
+    protected HybridRoseSubSort hybridRoseSubSort;
+    protected int yearOfSelection;
 
-    public HybridRose(long id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
-        super(id, name, soil, color, growingTips, multiplying);
-    }
-
-    public HybridRose(long id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, HybridRoseSubSort hybridRoseSubSort, int yearOfSelection) {
+    public HybridRose(String id, String name, Soil soil, Color color,
+                      String growingTips, Multiplying multiplying, HybridRoseSubSort hybridRoseSubSort, int yearOfSelection) {
         super(id, name, soil, color, growingTips, multiplying);
         this.hybridRoseSubSort = hybridRoseSubSort;
         this.yearOfSelection = yearOfSelection;
@@ -31,7 +28,11 @@ public class HybridRose extends Rose {
     }
 
     public void setHybridRoseSubSort(HybridRoseSubSort hybridRoseSubSort) {
-        this.hybridRoseSubSort = hybridRoseSubSort;
+        if(hybridRoseSubSort ==null){
+            this.hybridRoseSubSort = HybridRoseSubSort.LARGE;
+        }else {
+            this.hybridRoseSubSort = hybridRoseSubSort;
+        }
     }
 
     public int getYearOfSelection() {
@@ -62,9 +63,6 @@ public class HybridRose extends Rose {
         return "HybridRose{" +
                 "hybridRoseSubSort=" + hybridRoseSubSort +
                 ", yearOfSelection=" + yearOfSelection +
-                ", blossomTime='" + blossomTime + '\'' +
-                ", petalQuantity=" + petalQuantity +
-                ", budType='" + budType + '\'' +
                 '}';
     }
 }

@@ -1,5 +1,14 @@
 package entity.enums;
 
 public enum WildRoseSort {
-    BRACTEATA_ROSE, FOLIOLOSA_ROSE, RUGOSA_ROSE, WOODSII_ROSE
+    BRACTEATA("bracteata rose"),
+    FOLIOLOSA("foliolosa rose"),
+    RUGOSA("rugosa rose"),
+    WOODSII("woodsii rose");
+
+    private String value;
+
+    WildRoseSort(String value){
+        this.value = value;
     }
+}

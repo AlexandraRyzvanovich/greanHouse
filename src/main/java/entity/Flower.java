@@ -8,7 +8,7 @@ import java.util.Objects;
 
 abstract public class Flower {
 
-    private long id;
+    private String id;
     private String name;
     private Soil soil;
     private Color color;
@@ -19,7 +19,7 @@ abstract public class Flower {
 
     }
 
-    public Flower(long id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
+    public Flower(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
         this.name = name;
         this.soil = soil;
         this.color = color;
@@ -28,11 +28,11 @@ abstract public class Flower {
         this.id = id;
     }
 
-    public long getId(){
+    public String getId(){
         return id;
     }
 
-    public void setId(long id){
+    public void setId(String id){
         this.id = id;
     }
 

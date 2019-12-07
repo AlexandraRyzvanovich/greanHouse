@@ -1,98 +1,98 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flowers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<flowers
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://www.epam.com/flowers"
-         xsi:schemaLocation="http://www.epam.com/flower flowers.xsd">
+         xsi:schemaLocation="http://www.epam.com/flowers flowers.xsd">
     <rose login="rose0000">
         <name>my Favorite Rose 0</name>
         <soil>podzolic</soil>
         <color>white</color>
-        <growing-tips>not specified</growing-tips>
+        <growing_tips>not specified</growing_tips>
         <multiplying>seeds</multiplying>
-        <blossom-time>winter</blossom-time>
-        <petal-quantity>5</petal-quantity>
-        <bud-type>round</bud-type>
+        <blossom_time>winter</blossom_time>
+        <petal_quantity>5</petal_quantity>
+        <bud_type>round</bud_type>
     </rose>
 
     <rose login="rose0001" >
         <name>my Favorite Rose 1</name>
         <soil>podzolic</soil>
         <color>white</color>
-        <growing-tips>careful</growing-tips>
+        <growing_tips>careful</growing_tips>
         <multiplying>leaves</multiplying>
-        <blossom-time>winter</blossom-time>
-        <petal-quantity>5</petal-quantity>
-        <bud-type>oval</bud-type>
+        <blossom_time>winter</blossom_time>
+        <petal_quantity>5</petal_quantity>
+        <bud_type>oval</bud_type>
     </rose>
 
-    <garden-rose login="rose0002" >
+    <garden_rose login="rose0002" >
         <name>my Favorite Rose 2</name>
-        <soil>sod podzolic</soil>
+        <soil>podzolic</soil>
         <color>white</color>
-        <growing-tips>not specified</growing-tips>
+        <growing_tips>not specified</growing_tips>
         <multiplying>seeds</multiplying>
-        <blossom-time>middle summer</blossom-time>
-        <petal-quantity></petal-quantity>
-        <bud-type>square</bud-type>
-        <bush-type>climbing</bush-type>
-    </garden-rose>
+        <blossom_time>middle summer</blossom_time>
+        <petal_quantity></petal_quantity>
+        <bud_type>square</bud_type>
+        <bush_type>climbing</bush_type>
+    </garden_rose>
 
-    <garden-rose login="rose0003" garden-rose-sort="rose de rescht" >
+    <garden_rose login="rose0003" garden_rose_sort="rescht" >
         <name>my Favorite Rose 3</name>
         <soil>podzolic</soil>
         <color>red</color>
-        <growing-tips>not specified</growing-tips>
+        <growing_tips>not specified</growing_tips>
         <multiplying>leaves</multiplying>
-        <blossom-time>spring</blossom-time>
-        <petal-quantity>12</petal-quantity>
-        <bud-type>huge oval</bud-type>
-        <bush-type>single</bush-type>
-    </garden-rose>
+        <blossom_time>spring</blossom_time>
+        <petal_quantity>12</petal_quantity>
+        <bud_type>huge oval</bud_type>
+        <bush_type>single</bush_type>
+    </garden_rose>
 
-    <hybrid-rose login="rose0004" >
+    <hybrid_rose login="rose0004" >
         <name>my Favorite Rose 4</name>
-        <soil>sod podzolic</soil>
+        <soil>podzolic</soil>
         <color>red</color>
-        <growing-tips>poor once a week</growing-tips>
+        <growing_tips>poor once a week</growing_tips>
         <multiplying>seeds</multiplying>
-        <blossom-time>autumn</blossom-time>
-        <petal-quantity>13</petal-quantity>
-        <bud-type>round</bud-type>
-        <year-of-selection>1880</year-of-selection>
-    </hybrid-rose>
+        <blossom_time>autumn</blossom_time>
+        <petal_quantity>13</petal_quantity>
+        <bud_type>round</bud_type>
+        <year_of_selection>1880</year_of_selection>
+    </hybrid_rose>
 
-    <hybrid-rose login="rose0005" hybrid-rose-subSort="large flowered" >
+    <hybrid_rose login="rose0005" hybrid_rose_subSort="cluster" >
         <name>my Favorite Rose 5</name>
         <soil>podzolic</soil>
         <color>yellow</color>
-        <growing-tips>not specified</growing-tips>
+        <growing_tips>not specified</growing_tips>
         <multiplying>cuttage</multiplying>
-        <blossom-time>spring</blossom-time>
-        <petal-quantity>8</petal-quantity>
-        <bud-type>oval</bud-type>
-        <year-of-selection>1999</year-of-selection>
-    </hybrid-rose>
+        <blossom_time>spring</blossom_time>
+        <petal_quantity>8</petal_quantity>
+        <bud_type>oval</bud_type>
+        <year_of_selection>1999</year_of_selection>
+    </hybrid_rose>
 
-    <wild-rose login="rose0006" >
+    <wild_rose login="rose0006" >
         <name>my Favorite Rose 6</name>
         <soil>podzolic</soil>
         <color>yellow</color>
-        <growing-tips>poor 2 times a day</growing-tips>
+        <growing_tips>poor 2 times a day</growing_tips>
         <multiplying>cuttage</multiplying>
-        <blossom-time>spring</blossom-time>
-        <petal-quantity>25</petal-quantity>
-        <bud-type>round with inside round bud</bud-type>
-        <fruit-Form>round</fruit-Form>
-    </wild-rose>
-    <wild-rose login="rose0007" wild-rose-sort="foliolosa rose" >
+        <blossom_time>spring</blossom_time>
+        <petal_quantity>25</petal_quantity>
+        <bud_type>round with inside round bud</bud_type>
+        <fruit_Form>round</fruit_Form>
+    </wild_rose>
+    <wild_rose login="rose0007" wild_rose_sort="foliolosa" >
         <name>my Favorite Rose 7</name>
-        <soil>sod podzolic</soil>
+        <soil>podzolic</soil>
         <color>red</color>
-        <growing-tips>not specified</growing-tips>
+        <growing_tips>not specified</growing_tips>
         <multiplying>leaves</multiplying>
-        <blossom-time>summer</blossom-time>
-        <petal-quantity>13</petal-quantity>
-        <bud-type>oval small</bud-type>
-        <fruit-Form>small round</fruit-Form>
-    </wild-rose>
+        <blossom_time>summer</blossom_time>
+        <petal_quantity>13</petal_quantity>
+        <bud_type>oval small</bud_type>
+        <fruit_Form>small round</fruit_Form>
+    </wild_rose>
 
 </flowers>
