@@ -1,4 +1,6 @@
+
 import entity.Flower;
+import parser.domparser.DomParser;
 import parser.jaxbparser.UnMarshalWithXSD;
 import parser.saxparser.FlowersSAXBuilder;
 import errorHandler.FlowerErrorHandler;
@@ -25,7 +27,14 @@ public class Runner {
         System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++");
         for (Flower flower:list
              ) {
-            System.out.println(flower);
+            System.out.println("НАКОНЕЦ-то JAXB" + flower);
         }
+        System.out.println("+++++++++++++++JAXB+++++++++++++++++++++++++");
+
+        DomParser domBuilder = new DomParser();
+        domBuilder.parse("src/test/resources/flowers.xml");
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println(domBuilder.getFlowers());
+        System.out.println("+++++++++++++ДОМ++++++++++++++++++++++");
     }
 }
