@@ -1,9 +1,7 @@
 package parser;
 
-import entity.Flower;
-
 import java.util.List;
 
-public interface Parser {
+public interface Parser<Flower> {
     List<Flower> parse(String path);
 }

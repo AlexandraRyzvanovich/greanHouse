@@ -1,10 +1,14 @@
 package entity;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 
-@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+
+@XmlRootElement(name = "flowers")
 public class Flowers {
+    @XmlElementRef(name = "flower", namespace = "http://www.epam.com/flowers", type = JAXBElement.class)
     private ArrayList<Flower> list = new ArrayList<>();
         public Flowers() {
         }

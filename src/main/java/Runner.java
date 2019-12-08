@@ -1,3 +1,4 @@
+import parser.jaxbparser.UnMarshalWithXSD;
 import parser.saxparser.FlowersSAXBuilder;
 import errorHandler.FlowerErrorHandler;
 import validator.ValidatorSAX;
@@ -15,6 +16,9 @@ public class Runner {
         FlowersSAXBuilder saxBuilder = new FlowersSAXBuilder();
         saxBuilder.buildListFlowers("src/test/resources/flowers.xml");
         System.out.println(saxBuilder.getFlowers());
+
+        UnMarshalWithXSD unMarshalWithXSD = new UnMarshalWithXSD();
+        unMarshalWithXSD.parse(pathXML);
 
     }
 }

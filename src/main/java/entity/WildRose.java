@@ -6,11 +6,21 @@ import entity.enums.Soil;
 import entity.enums.WildRoseSort;
 
 
+import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
-public class WildRose extends Rose {
-    private WildRoseSort wildRoseSort;
-    private String fruitForm;
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Wild-Rose", propOrder = {
+        "fruitForm"
+})
+public class WildRose
+        extends Rose
+{
+
+    @XmlElement(name = "fruit-Form", required = true)
+    protected String fruitForm;
+    @XmlAttribute(name = "wild-rose-sort")
+    protected WildRoseSort wildRoseSort;
 
     public WildRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, WildRoseSort wildRoseSort, String fruitForm) {
         super(id, name, soil, color, growingTips, multiplying);

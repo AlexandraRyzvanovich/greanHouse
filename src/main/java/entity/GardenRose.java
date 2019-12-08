@@ -1,11 +1,21 @@
 package entity;
 
 import entity.enums.*;
+
+import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
-public class GardenRose extends Rose {
-    private GardenRoseSort gardenRoseSort;
-    private BushType bushType;
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Garden-Rose", propOrder = {
+        "bushType"
+})
+public class GardenRose extends Rose
+{
+
+    @XmlElement(name = "bush-type", required = true)
+    protected BushType bushType;
+    @XmlAttribute(name = "garden-rose-sort")
+    protected GardenRoseSort gardenRoseSort;
 
     public GardenRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, GardenRoseSort gardenRoseSort, BushType bushType) {
         super(id, name, soil, color, growingTips, multiplying);

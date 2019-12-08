@@ -24,7 +24,8 @@ public class FlowerHandler extends DefaultHandler {
         if ("rose".equals(localName)) {
             rose = new Rose();
             rose.setId(attrs.getValue(0));
-        } else if("hybrid_Rose".equals(localName)) {
+
+        } else if("hybrid_rose".equals(localName)) {
             rose =  new HybridRose();
             rose.setId(attrs.getValue(0));
             if (attrs.getLength() == 2) {
@@ -63,13 +64,14 @@ public class FlowerHandler extends DefaultHandler {
     public void endElement(String uri, String localName, String qName) {
         if ("rose".equals(localName)) {
             flowers.add(rose);
-        }else if("hybrid_Rose".equals(localName)){
+        }else if("hybrid_rose".equals(localName)){
             flowers.add(rose);
-        }else if("wild_Rose".equals(localName)){
+        }else if("wild_rose".equals(localName)){
             flowers.add(rose);
         } else if("garden_rose".equals(localName)){
             flowers.add(rose);
         }
+
     }
 
     public void characters(char[] ch, int start, int length) {
@@ -101,9 +103,11 @@ public class FlowerHandler extends DefaultHandler {
                     ((Rose) rose).setBudType(s);
                     break;
                 case BUSH_TYPE:
+                    System.out.println(rose);
                     ((GardenRose) rose).setBushType(BushType.valueOf(s.toUpperCase()));
                     break;
                 case YEAR_OF_SELECTION:
+                    System.out.println(rose);
                     ((HybridRose) rose).setYearOfSelection(Integer.parseInt(s));
                     break;
                 case FRUIT_FORM:

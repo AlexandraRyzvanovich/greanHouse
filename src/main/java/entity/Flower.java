@@ -4,16 +4,41 @@ import entity.enums.Color;
 import entity.enums.Multiplying;
 import entity.enums.Soil;
 
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Objects;
 
-abstract public class Flower {
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Flower", propOrder = {
+        "name",
+        "soil",
+        "color",
+        "growingTips",
+        "multiplying"
+})
+@XmlSeeAlso({
+        Rose.class
+})
+public abstract class Flower {
 
-    private String id;
+    @XmlElement(required = true)
     private String name;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "string")
     private Soil soil;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "string")
     private Color color;
-    private String growingTips;
+    @XmlElement(name = "growing-tips", required = true)
+    protected String growingTips;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "string")
     private Multiplying multiplying;
+    @XmlAttribute(name = "login", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlID
+    private String login;
 
     public Flower(){
 
@@ -25,15 +50,15 @@ abstract public class Flower {
         this.color = color;
         this.growingTips = growingTips;
         this.multiplying = multiplying;
-        this.id = id;
+        this.login = id;
     }
 
     public String getId(){
-        return id;
+        return login;
     }
 
     public void setId(String id){
-        this.id = id;
+        this.login = id;
     }
 
     public String getName() {
@@ -97,7 +122,7 @@ abstract public class Flower {
     @Override
     public String toString() {
         return "Flower{" +
-                "id=" + id +
+                "id=" + login +
                 ", name='" + name + '\'' +
                 ", soil=" + soil +
                 ", color=" + color +

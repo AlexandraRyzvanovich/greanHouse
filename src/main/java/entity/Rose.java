@@ -4,13 +4,29 @@ import entity.enums.Color;
 import entity.enums.Multiplying;
 import entity.enums.Soil;
 
+import javax.xml.bind.annotation.*;
 import java.util.Objects;
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Rose", propOrder = {
+        "blossomTime",
+        "petalQuantity",
+        "budType"
+})
+@XmlSeeAlso({
+        HybridRose.class,
+        GardenRose.class,
+        WildRose.class
+})
+public class Rose
+        extends Flower
+{
 
-public class Rose extends Flower {
-    private String blossomTime;
-    private int petalQuantity;
-    private String budType;
-
+    @XmlElement(name = "blossom-time", required = true, defaultValue = "summer")
+    protected String blossomTime;
+    @XmlElement(name = "petal-quantity", defaultValue = "7")
+    protected int petalQuantity;
+    @XmlElement(name = "bud-type", required = true)
+    protected String budType;
     public Rose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
         super(id, name, soil, color, growingTips, multiplying);
     }
