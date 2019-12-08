@@ -34,6 +34,7 @@ public class FlowerHandler extends DefaultHandler {
             }
         }
         else if("garden_rose".equals(localName)){
+            GardenRose rose1 = new GardenRose();
             rose = new GardenRose();
             rose.setId(attrs.getValue(0));
             if (attrs.getLength() == 2) {
