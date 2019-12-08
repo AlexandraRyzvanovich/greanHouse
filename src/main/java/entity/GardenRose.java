@@ -9,18 +9,17 @@ import java.util.Objects;
 @XmlType(name = "Garden-Rose", propOrder = {
         "bushType"
 })
-public class GardenRose extends Rose
-{
+public class GardenRose extends Rose {
 
-    @XmlElement(name = "bush-type", required = true)
+    @XmlElement(name = "bush_type", required = true)
     protected BushType bushType;
-    @XmlAttribute(name = "garden-rose-sort")
+    @XmlAttribute(name = "garden_rose_sort")
     protected GardenRoseSort gardenRoseSort;
 
-    public GardenRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, GardenRoseSort gardenRoseSort, BushType bushType) {
-        super(id, name, soil, color, growingTips, multiplying);
-        this.gardenRoseSort = gardenRoseSort;
+    public GardenRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, String blossomTime, int petalQuantity, String budType, BushType bushType, GardenRoseSort gardenRoseSort) {
+        super(id, name, soil, color, growingTips, multiplying, blossomTime, petalQuantity, budType);
         this.bushType = bushType;
+        this.gardenRoseSort = gardenRoseSort;
     }
 
     public GardenRose() {

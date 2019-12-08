@@ -13,19 +13,18 @@ import java.util.Objects;
 @XmlType(name = "Hybrid-Rose", propOrder = {
         "yearOfSelection"
 })
-public class HybridRose
-        extends Rose
-{
+public class HybridRose extends Rose {
 
-    @XmlElement(name = "year-of-selection")
+    @XmlElement(name = "year_of_selection")
     private int yearOfSelection;
-    @XmlAttribute(name = "hybrid-rose-subSort")
-    protected HybridRoseSubSort hybridRoseSubSort;
-    public HybridRose(String id, String name, Soil soil, Color color,
-                      String growingTips, Multiplying multiplying, HybridRoseSubSort hybridRoseSubSort, int yearOfSelection) {
-        super(id, name, soil, color, growingTips, multiplying);
-        this.hybridRoseSubSort = hybridRoseSubSort;
+    @XmlAttribute(name = "hybrid_rose_subSort")
+    private HybridRoseSubSort hybridRoseSubSort;
+
+    public HybridRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
+                      String blossomTime, int petalQuantity, String budType, int yearOfSelection, HybridRoseSubSort hybridRoseSubSort) {
+        super(id, name, soil, color, growingTips, multiplying, blossomTime, petalQuantity, budType);
         this.yearOfSelection = yearOfSelection;
+        this.hybridRoseSubSort = hybridRoseSubSort;
     }
 
     public HybridRose() {

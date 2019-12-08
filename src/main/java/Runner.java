@@ -1,7 +1,10 @@
+import entity.Flower;
 import parser.jaxbparser.UnMarshalWithXSD;
 import parser.saxparser.FlowersSAXBuilder;
 import errorHandler.FlowerErrorHandler;
 import validator.ValidatorSAX;
+
+import java.util.List;
 
 public class Runner {
     public static void main(String[] args) {
@@ -18,7 +21,11 @@ public class Runner {
         System.out.println(saxBuilder.getFlowers());
 
         UnMarshalWithXSD unMarshalWithXSD = new UnMarshalWithXSD();
-        unMarshalWithXSD.parse(pathXML);
-
+        List<Flower> list = unMarshalWithXSD.parse(pathXML);
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++");
+        for (Flower flower:list
+             ) {
+            System.out.println(flower);
+        }
     }
 }

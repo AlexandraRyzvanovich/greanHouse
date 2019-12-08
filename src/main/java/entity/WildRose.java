@@ -13,19 +13,18 @@ import java.util.Objects;
 @XmlType(name = "Wild-Rose", propOrder = {
         "fruitForm"
 })
-public class WildRose
-        extends Rose
-{
+public class WildRose extends Rose {
 
-    @XmlElement(name = "fruit-Form", required = true)
-    protected String fruitForm;
-    @XmlAttribute(name = "wild-rose-sort")
-    protected WildRoseSort wildRoseSort;
+    @XmlElement(name = "fruit_Form", required = true)
+    private String fruitForm;
+    @XmlAttribute(name = "wild_rose_sort")
+    private WildRoseSort wildRoseSort;
 
-    public WildRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, WildRoseSort wildRoseSort, String fruitForm) {
-        super(id, name, soil, color, growingTips, multiplying);
-        this.wildRoseSort = wildRoseSort;
+    public WildRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
+                    String blossomTime, int petalQuantity, String budType, String fruitForm, WildRoseSort wildRoseSort) {
+        super(id, name, soil, color, growingTips, multiplying, blossomTime, petalQuantity, budType);
         this.fruitForm = fruitForm;
+        this.wildRoseSort = wildRoseSort;
     }
 
     public WildRose() {

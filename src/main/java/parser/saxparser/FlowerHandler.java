@@ -23,11 +23,11 @@ public class FlowerHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attrs) {
         if ("rose".equals(localName)) {
             rose = new Rose();
-            rose.setId(attrs.getValue(0));
+            rose.setLogin(attrs.getValue(0));
 
         } else if("hybrid_rose".equals(localName)) {
             rose =  new HybridRose();
-            rose.setId(attrs.getValue(0));
+            rose.setLogin(attrs.getValue(0));
             if (attrs.getLength() == 2) {
                 ((HybridRose) rose).setHybridRoseSubSort(HybridRoseSubSort.valueOf(attrs.getValue(1).toUpperCase()));
             }else{
@@ -37,7 +37,7 @@ public class FlowerHandler extends DefaultHandler {
         else if("garden_rose".equals(localName)){
             GardenRose rose1 = new GardenRose();
             rose = new GardenRose();
-            rose.setId(attrs.getValue(0));
+            rose.setLogin(attrs.getValue(0));
             if (attrs.getLength() == 2) {
                 ((GardenRose)rose).setGardenRoseSort(GardenRoseSort.valueOf(attrs.getValue(1).toUpperCase()));
             } else {
@@ -46,7 +46,7 @@ public class FlowerHandler extends DefaultHandler {
         }
         else if("wild_rose".equals(localName)){
             rose = new WildRose();
-            rose.setId(attrs.getValue(0));
+            rose.setLogin(attrs.getValue(0));
             if (attrs.getLength() == 2) {
                 ((WildRose)rose).setWildRoseSort(WildRoseSort.valueOf(attrs.getValue(1).toUpperCase()));
             } else {

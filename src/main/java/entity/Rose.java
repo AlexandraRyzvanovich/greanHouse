@@ -17,19 +17,14 @@ import java.util.Objects;
         GardenRose.class,
         WildRose.class
 })
-public class Rose
-        extends Flower
-{
+public class Rose extends Flower {
 
-    @XmlElement(name = "blossom-time", required = true, defaultValue = "summer")
-    protected String blossomTime;
-    @XmlElement(name = "petal-quantity", defaultValue = "7")
-    protected int petalQuantity;
-    @XmlElement(name = "bud-type", required = true)
-    protected String budType;
-    public Rose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
-        super(id, name, soil, color, growingTips, multiplying);
-    }
+    @XmlElement(name = "blossom_time", required = true, defaultValue = "summer")
+    private String blossomTime;
+    @XmlElement(name = "petal_quantity", defaultValue = "7")
+    private int petalQuantity;
+    @XmlElement(name = "bud_type", required = true)
+    private String budType;
 
     public Rose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, String blossomTime, int petalQuantity, String budType) {
         super(id, name, soil, color, growingTips, multiplying);

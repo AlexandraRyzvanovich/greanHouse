@@ -9,16 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 public enum Soil {
 
     @XmlEnumValue("podzolic")
-    PODZOLIC("podzolic"),
-    @XmlEnumValue("sod podzolic")
-    SOD_PODZOLIC("sod podzolic"),
+    PODZOLIC,
     @XmlEnumValue("ground")
-    GROUND("ground");
-    private final String value;
-
-
-    Soil(String value){
-        this.value = value;
-    }
-
+    GROUND;
 }

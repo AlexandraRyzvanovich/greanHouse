@@ -9,13 +9,10 @@ import javax.xml.bind.annotation.XmlType;
 public enum Multiplying {
 
     @XmlEnumValue("leaves")
-    LEAVES("leaves"),
+    LEAVES,
     @XmlEnumValue("cuttage")
-    CUTTAGE("cuttage"),
+    CUTTAGE,
     @XmlEnumValue("seeds")
-    SEEDS("seeds");
-    private String value;
-    Multiplying(String value){
-        this.value = value;
-    }
+    SEEDS;
+
 }

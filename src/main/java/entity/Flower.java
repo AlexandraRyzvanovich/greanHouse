@@ -30,7 +30,7 @@ public abstract class Flower {
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     private Color color;
-    @XmlElement(name = "growing-tips", required = true)
+    @XmlElement(name = "growing_tips", required = true)
     protected String growingTips;
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
@@ -53,11 +53,11 @@ public abstract class Flower {
         this.login = id;
     }
 
-    public String getId(){
+    public String getLogin(){
         return login;
     }
 
-    public void setId(String id){
+    public void setLogin(String id){
         this.login = id;
     }
 
@@ -106,7 +106,7 @@ public abstract class Flower {
         if (this == o) return true;
         if (!(o instanceof Flower)) return false;
         Flower flower = (Flower) o;
-        return getId() == flower.getId() &&
+        return getLogin().equals(flower.getLogin()) &&
                 Objects.equals(getName(), flower.getName()) &&
                 getSoil() == flower.getSoil() &&
                 getColor() == flower.getColor() &&
@@ -116,7 +116,7 @@ public abstract class Flower {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getSoil(), getColor(), getGrowingTips(), getMultiplying());
+        return Objects.hash(getLogin(), getName(), getSoil(), getColor(), getGrowingTips(), getMultiplying());
     }
 
     @Override

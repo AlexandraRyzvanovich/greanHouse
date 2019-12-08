@@ -28,7 +28,6 @@ public class UnMarshalWithXSD implements Parser {
                     SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             File schemaLocation = new File(schemaName);
             Schema schema = factory.newSchema(schemaLocation);
-
             um.setSchema(schema);
             Flowers st =
                     (Flowers) um.unmarshal(new File("src/test/resources/flowers.xml"));
