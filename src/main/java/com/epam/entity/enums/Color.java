@@ -7,7 +7,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "Color")
 @XmlEnum
 public enum Color {
-
     @XmlEnumValue("white")
     WHITE,
     @XmlEnumValue("red")

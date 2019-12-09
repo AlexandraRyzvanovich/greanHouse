@@ -36,13 +36,12 @@ public abstract class Flower {
     @XmlElement(name = "multiplying",required = true)
     @XmlSchemaType(name = "string")
     private Multiplying multiplying;
-    @XmlAttribute(name = "login", required = true)
+    @XmlAttribute(name = "id", required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
-    private String login;
+    private String id;
 
     public Flower(){
-
     }
 
     public Flower(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
@@ -51,15 +50,15 @@ public abstract class Flower {
         this.color = color;
         this.growingTips = growingTips;
         this.multiplying = multiplying;
-        this.login = id;
+        this.id = id;
     }
 
     public String getLogin(){
-        return login;
+        return id;
     }
 
     public void setLogin(String id){
-        this.login = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -104,31 +103,39 @@ public abstract class Flower {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Flower)) return false;
+        if (this == o) {
+            return true;
+        }
+        if(this ==null){
+            return false;
+        }
+        if (getClass() != o.getClass() ){
+            return false;
+        }
         Flower flower = (Flower) o;
+        if(flower.name == null || flower.color == null ||
+        flower.growingTips == null | flower.id == null || flower.multiplying == null ||
+        flower.soil == null){
+            return false;
+        }
         return getLogin().equals(flower.getLogin()) &&
-                Objects.equals(getName(), flower.getName()) &&
+                getName().equals(flower.getName()) &&
                 getSoil() == flower.getSoil() &&
                 getColor() == flower.getColor() &&
-                Objects.equals(getGrowingTips(), flower.getGrowingTips()) &&
+                getGrowingTips().equals(flower.getGrowingTips()) &&
                 getMultiplying() == flower.getMultiplying();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getLogin(), getName(), getSoil(), getColor(), getGrowingTips(), getMultiplying());
-    }
-
-    @Override
-    public String toString() {
-        return "Flower{" +
-                "id=" + login +
-                ", name='" + name + '\'' +
-                ", soil=" + soil +
-                ", color=" + color +
-                ", growingTips='" + growingTips + '\'' +
-                ", multiplying=" + multiplying +
-                '}';
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + id.hashCode();
+        result = prime * result + name.hashCode();
+        result = prime * result + color.hashCode();
+        result = prime * result + growingTips.hashCode();
+        result = prime * result + multiplying.hashCode();
+        result = prime * result + soil.hashCode();
+        return result;
     }
 }

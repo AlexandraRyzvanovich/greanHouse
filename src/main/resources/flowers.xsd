@@ -24,7 +24,7 @@
             <element name="growing_tips" type="string"/>
             <element name="multiplying" type="tns:Multiplying"/>
         </sequence>
-        <attribute name="login" type="tns:ID" use="required"/>
+        <attribute name="id" type="tns:ID" use="required"/>
     </complexType>
     <simpleType name="ID">
         <restriction base="ID">
