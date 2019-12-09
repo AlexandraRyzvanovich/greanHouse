@@ -11,14 +11,12 @@ public class FlowerErrorHandler extends DefaultHandler {
     public void warning(SAXParseException e){
         logger.warn(getLineAddress(e) + "-" + e.getMessage());
     }
-
     public void error(SAXParseException e) {
         logger.error(getLineAddress(e) + " - " + e.getMessage());
     }
     public void fatalError(SAXParseException e) {
         logger.fatal(getLineAddress(e) + " - " + e.getMessage());
     }
-
     private String getLineAddress(SAXParseException e) {
         return e.getLineNumber() + " : " + e.getColumnNumber();
     }

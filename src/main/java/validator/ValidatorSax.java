@@ -1,6 +1,9 @@
 package validator;
 
 import errorHandler.FlowerErrorHandler;
+import exception.ValidatorException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
@@ -12,16 +15,17 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 
-public class ValidatorSAX {
+public class ValidatorSax {
     private FlowerErrorHandler errorHandler;
     private final String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
     private final SchemaFactory factory = SchemaFactory.newInstance(language);
+    private static final Logger LOGGER = LogManager.getLogger();
 
-    public ValidatorSAX(FlowerErrorHandler errorHandler) {
+    public ValidatorSax(FlowerErrorHandler errorHandler) {
         this.errorHandler = errorHandler;
     }
 
-    public Boolean validateXML(String fileName, String schemaName){
+    public Boolean validateXML(String fileName, String schemaName) throws ValidatorException{
         File schemaLocation = new File(schemaName);
         try{
             Schema schema = factory.newSchema(schemaLocation);
@@ -29,13 +33,8 @@ public class ValidatorSAX {
             validator.setErrorHandler(errorHandler);
             Source source = new StreamSource(fileName);
             validator.validate(source);
-        } catch (SAXException e) {
-            System.err.print("validation "+ fileName + " is not valid because "
-                    + e.getMessage());
-            return false;
-        } catch (IOException e) {
-            System.err.print(fileName + " is not valid because "
-                    + e.getMessage());
+        } catch (SAXException | IOException ex ) {
+            LOGGER.warn("Validation failed because" + ex.getMessage());
             return false;
         }
         return true;

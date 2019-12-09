@@ -36,9 +36,8 @@ public class DomParser implements Parser {
 
     @Override
     public List<Flower> parse(String fileName) {
-        Document doc = null;
         try {
-            doc = docBuilder.parse(fileName);
+            Document doc = docBuilder.parse(fileName);
             Element root = doc.getDocumentElement();
             NodeList flowersList = root.getElementsByTagName(ROSE_TAG_NAME);
             for (int i = 0; i < flowersList.getLength(); i++) {
@@ -49,19 +48,19 @@ public class DomParser implements Parser {
             NodeList flowersList2 = root.getElementsByTagName(WILD_ROSE_TAG_NAME);
             for (int i = 0; i < flowersList2.getLength(); i++) {
                 Element flowerElement = (Element) flowersList2.item(i);
-                Flower flower = buildRose(flowerElement);
+                Flower flower = buildWildRose(flowerElement);
                 flowers.add(flower);
             }
             NodeList flowersList3 = root.getElementsByTagName(GARDEN_ROSE_TAG_NAME);
             for (int i = 0; i < flowersList3.getLength(); i++) {
                 Element flowerElement = (Element) flowersList3.item(i);
-                Flower flower = buildRose(flowerElement);
+                Flower flower = buildGardenRose(flowerElement);
                 flowers.add(flower);
             }
             NodeList flowersList4 = root.getElementsByTagName(HYBRID_ROSE_TAG_NAME);
             for (int i = 0; i < flowersList4.getLength(); i++) {
                 Element flowerElement = (Element) flowersList4.item(i);
-                Flower flower = buildRose(flowerElement);
+                Flower flower = buildHybridRose(flowerElement);
                 flowers.add(flower);
             }
 
@@ -152,7 +151,6 @@ public class DomParser implements Parser {
         ((Rose) flower).setBlossomTime(blossomTime);
 
         return flower;
-
     }
 
     private static String getElementTextContent(Element element, String elementName) {
