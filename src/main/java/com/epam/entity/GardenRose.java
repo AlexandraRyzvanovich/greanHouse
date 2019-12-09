@@ -1,9 +1,12 @@
 package com.epam.entity;
 
-import com.epam.entity.enums.*;
+import com.epam.entity.enums.BushType;
+import com.epam.entity.enums.GardenRoseSort;
+import com.epam.entity.enums.Soil;
+import com.epam.entity.enums.Color;
+import com.epam.entity.enums.Multiplying;
 
 import javax.xml.bind.annotation.*;
-import java.util.Objects;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "garden_rose", namespace = "http://www.epam.com/flowers")
@@ -13,11 +16,12 @@ import java.util.Objects;
 public class GardenRose extends Rose {
 
     @XmlElement(name = "bush_type", required = true)
-    protected BushType bushType;
+    private BushType bushType;
     @XmlAttribute(name = "garden_rose_sort")
-    protected GardenRoseSort gardenRoseSort;
+    private GardenRoseSort gardenRoseSort;
 
-    public GardenRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, String blossomTime, int petalQuantity, String budType, BushType bushType, GardenRoseSort gardenRoseSort) {
+    public GardenRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, String blossomTime,
+                      int petalQuantity, String budType, BushType bushType, GardenRoseSort gardenRoseSort) {
         super(id, name, soil, color, growingTips, multiplying, blossomTime, petalQuantity, budType);
         this.bushType = bushType;
         this.gardenRoseSort = gardenRoseSort;
@@ -32,9 +36,9 @@ public class GardenRose extends Rose {
     }
 
     public void setGardenRoseSort(GardenRoseSort gardenRoseSort) {
-        if(gardenRoseSort==null){
+        if (gardenRoseSort == null) {
             this.gardenRoseSort = GardenRoseSort.BANKY;
-        }else {
+        } else {
             this.gardenRoseSort = gardenRoseSort;
         }
     }
@@ -49,24 +53,30 @@ public class GardenRose extends Rose {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof GardenRose)) return false;
-        if (!super.equals(o)) return false;
-        GardenRose that = (GardenRose) o;
-        return getGardenRoseSort() == that.getGardenRoseSort() &&
-                getBushType() == that.getBushType();
+        if (this == o) {
+            return true;
+        }
+        if (getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        GardenRose gardenRose = (GardenRose) o;
+        if (gardenRose.bushType == null || gardenRose.gardenRoseSort == null) {
+            return false;
+        }
+        return getGardenRoseSort() == gardenRose.getGardenRoseSort() &&
+                getBushType() == gardenRose.getBushType();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getGardenRoseSort(), getBushType());
-    }
-
-    @Override
-    public String toString() {
-        return "GardenRose{" +
-                "gardenRoseSort=" + gardenRoseSort +
-                ", bushType=" + bushType +
-                '}';
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + super.hashCode();
+        result = prime * result + bushType.hashCode();
+        result = prime * result + gardenRoseSort.hashCode();
+        return result;
     }
 }
