@@ -6,8 +6,6 @@ import com.epam.entity.enums.Multiplying;
 import com.epam.entity.enums.Soil;
 
 import javax.xml.bind.annotation.*;
-import java.util.Objects;
-
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "hybrid_rose", namespace = "http://www.epam.com/flowers")
@@ -37,9 +35,9 @@ public class HybridRose extends Rose {
     }
 
     public void setHybridRoseSubSort(HybridRoseSubSort hybridRoseSubSort) {
-        if(hybridRoseSubSort ==null){
+        if (hybridRoseSubSort == null) {
             this.hybridRoseSubSort = HybridRoseSubSort.LARGE;
-        }else {
+        } else {
             this.hybridRoseSubSort = hybridRoseSubSort;
         }
     }
@@ -54,24 +52,31 @@ public class HybridRose extends Rose {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof HybridRose)) return false;
-        if (!super.equals(o)) return false;
-        HybridRose that = (HybridRose) o;
-        return getYearOfSelection() == that.getYearOfSelection() &&
-                getHybridRoseSubSort() == that.getHybridRoseSubSort();
+        if (this == o) {
+            return true;
+        }
+        if (getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        HybridRose hybridRose = (HybridRose) o;
+        if (hybridRose.hybridRoseSubSort == null) {
+            return false;
+        }
+        return getYearOfSelection() == hybridRose.getYearOfSelection() &&
+                getHybridRoseSubSort() == hybridRose.getHybridRoseSubSort();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getHybridRoseSubSort(), getYearOfSelection());
-    }
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + super.hashCode();
+        result = prime * result + hybridRoseSubSort.hashCode();
+        result = prime * result + yearOfSelection;
 
-    @Override
-    public String toString() {
-        return "HybridRose{" +
-                "hybridRoseSubSort=" + hybridRoseSubSort +
-                ", yearOfSelection=" + yearOfSelection +
-                '}';
+        return result;
     }
 }
