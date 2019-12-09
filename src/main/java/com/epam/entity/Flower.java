@@ -7,7 +7,6 @@ import com.epam.entity.enums.Soil;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import java.util.Objects;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "flower", namespace = "http://www.epam.com/flowers")
@@ -32,7 +31,7 @@ public abstract class Flower {
     @XmlSchemaType(name = "string")
     private Color color;
     @XmlElement(name = "growing_tips", required = true)
-    protected String growingTips;
+    private String growingTips;
     @XmlElement(name = "multiplying",required = true)
     @XmlSchemaType(name = "string")
     private Multiplying multiplying;
@@ -41,7 +40,7 @@ public abstract class Flower {
     @XmlID
     private String id;
 
-    public Flower(){
+    public Flower() {
     }
 
     public Flower(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying) {
@@ -53,11 +52,11 @@ public abstract class Flower {
         this.id = id;
     }
 
-    public String getLogin(){
+    public String getLogin() {
         return id;
     }
 
-    public void setLogin(String id){
+    public void setLogin(String id) {
         this.id = id;
     }
 
@@ -106,16 +105,13 @@ public abstract class Flower {
         if (this == o) {
             return true;
         }
-        if(this ==null){
-            return false;
-        }
-        if (getClass() != o.getClass() ){
+        if (getClass() != o.getClass()) {
             return false;
         }
         Flower flower = (Flower) o;
-        if(flower.name == null || flower.color == null ||
-        flower.growingTips == null | flower.id == null || flower.multiplying == null ||
-        flower.soil == null){
+        if (flower.name == null || flower.color == null ||
+            flower.growingTips == null | flower.id == null ||
+                flower.multiplying == null || flower.soil == null) {
             return false;
         }
         return getLogin().equals(flower.getLogin()) &&
