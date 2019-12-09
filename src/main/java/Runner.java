@@ -1,6 +1,6 @@
 
-import entity.Flower;
-import parser.jaxbparser.UnMarshalWithXSD;
+import com.epam.entity.Flower;
+import com.epam.parser.JaxbParser;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ public class Runner {
         String pathXML = "./src/test/resources/flowers.xml";
 
 
-        UnMarshalWithXSD unMarshalWithXSD = new UnMarshalWithXSD();
-        List<Flower> list = unMarshalWithXSD.parse(pathXML);
+        JaxbParser jaxbParser = new JaxbParser();
+        List<Flower> list = jaxbParser.parse(pathXML);
         System.out.println("+++++++++++++++++JAXB++++++++++++++++++++++++++++");
         for (Flower flower : list) {
             System.out.println("НАКОНЕЦ-то JAXB" + flower);
