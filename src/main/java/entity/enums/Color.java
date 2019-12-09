@@ -9,17 +9,11 @@ import javax.xml.bind.annotation.XmlType;
 public enum Color {
 
     @XmlEnumValue("white")
-    WHITE("white"),
+    WHITE,
     @XmlEnumValue("red")
-    RED("red"),
+    RED,
     @XmlEnumValue("yellow")
-    YELLOW("yellow"),
+    YELLOW,
     @XmlEnumValue("pink")
-    PINK("pink");
-
-    private String value;
-
-    Color(String value) {
-        this.value = value;
-    }
+    PINK
 }

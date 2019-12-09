@@ -1,13 +1,16 @@
 package entity.enums;
 
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(name = "garden_rose_type")
+@XmlEnum
 public enum GardenRoseSort {
-    RESCHT("rose de rescht"),
-    FRANSIS("fransis lubrel"),
-    BANKY("lady banky");
-
-    private String value;
-
-    GardenRoseSort(String value){
-        this.value = value;
-    }
+    @XmlEnumValue("rescht")
+    RESCHT,
+    @XmlEnumValue("fransis")
+    FRANSIS,
+    @XmlEnumValue("banky")
+    BANKY
 }

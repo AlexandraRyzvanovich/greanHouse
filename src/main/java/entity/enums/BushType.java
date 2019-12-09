@@ -1,10 +1,14 @@
 package entity.enums;
 
-public enum BushType {
-    CLIMBING("climbing"), SINGLE("single");
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
-    private String value;
-    BushType(String value) {
-        this.value = value;
-    }
+@XmlType(name = "bush_type")
+@XmlEnum
+public enum BushType {
+    @XmlEnumValue("climbing")
+    CLIMBING,
+    @XmlEnumValue("single")
+    SINGLE
 }

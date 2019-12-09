@@ -7,12 +7,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "Multiplying")
 @XmlEnum
 public enum Multiplying {
-
     @XmlEnumValue("leaves")
     LEAVES,
     @XmlEnumValue("cuttage")
     CUTTAGE,
     @XmlEnumValue("seeds")
-    SEEDS;
+    SEEDS
 
 }

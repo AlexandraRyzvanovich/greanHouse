@@ -7,9 +7,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "Soil")
 @XmlEnum
 public enum Soil {
-
     @XmlEnumValue("podzolic")
     PODZOLIC,
     @XmlEnumValue("ground")
-    GROUND;
+    GROUND
 }

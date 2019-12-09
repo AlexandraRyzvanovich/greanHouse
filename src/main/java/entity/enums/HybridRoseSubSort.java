@@ -1,10 +1,16 @@
 package entity.enums;
 
-public enum HybridRoseSubSort {
-    CLUSTER("cluster flowered"), LARGE("large flowered"), HYBRID("hybrid tea rose");
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+import javax.xml.bind.annotation.XmlType;
 
-    private String value;
-    HybridRoseSubSort(String value){
-        this.value = value;
-    }
+@XmlType(name = "bush_type")
+@XmlEnum
+public enum HybridRoseSubSort {
+    @XmlEnumValue("cluster")
+    CLUSTER,
+    @XmlEnumValue("large")
+    LARGE,
+    @XmlEnumValue("hybrid")
+    HYBRID
 }
