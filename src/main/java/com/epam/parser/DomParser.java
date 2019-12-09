@@ -16,7 +16,6 @@ import java.util.List;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import com.epam.parser.Parser;
 
 public class DomParser implements Parser {
     private List<Flower> flowers;
@@ -175,7 +174,6 @@ public class DomParser implements Parser {
     private static String getElementTextContent(Element element, String elementName) {
         NodeList nList = element.getElementsByTagName(elementName);
         Node node = nList.item(0);
-        String text = node.getTextContent();
-        return text;
+        return node.getTextContent();
     }
 }

@@ -2,7 +2,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://www.epam.com/flowers"
          xsi:schemaLocation="http://www.epam.com/flowers flowers.xsd">
-    <rose login="rose0000">
+    <rose id="rose0000">
         <name>my Favorite Rose 0</name>
         <soil>podzolic</soil>
         <color>white</color>
@@ -13,7 +13,7 @@
         <bud_type>round</bud_type>
     </rose>
 
-    <rose login="rose0001" >
+    <rose id="rose0001" >
         <name>my Favorite Rose 1</name>
         <soil>podzolic</soil>
         <color>white</color>
@@ -24,7 +24,7 @@
         <bud_type>oval</bud_type>
     </rose>
 
-    <garden_rose login="rose0002" >
+    <garden_rose id="rose0002" >
         <name>my Favorite Rose 2</name>
         <soil>podzolic</soil>
         <color>white</color>
@@ -36,7 +36,7 @@
         <bush_type>climbing</bush_type>
     </garden_rose>
 
-    <garden_rose login="rose0003" garden_rose_sort="rescht" >
+    <garden_rose id="rose0003" garden_rose_sort="rescht" >
         <name>my Favorite Rose 3</name>
         <soil>podzolic</soil>
         <color>red</color>
@@ -48,7 +48,7 @@
         <bush_type>single</bush_type>
     </garden_rose>
 
-    <hybrid_rose login="rose0004" >
+    <hybrid_rose id="rose0004" >
         <name>my Favorite Rose 4</name>
         <soil>podzolic</soil>
         <color>red</color>
@@ -60,7 +60,7 @@
         <year_of_selection>1880</year_of_selection>
     </hybrid_rose>
 
-    <hybrid_rose login="rose0005" hybrid_rose_subSort="cluster" >
+    <hybrid_rose id="rose0005" hybrid_rose_subSort="cluster" >
         <name>my Favorite Rose 5</name>
         <soil>podzolic</soil>
         <color>yellow</color>
@@ -72,7 +72,7 @@
         <year_of_selection>1999</year_of_selection>
     </hybrid_rose>
 
-    <wild_rose login="rose0006" >
+    <wild_rose id="rose0006" >
         <name>my Favorite Rose 6</name>
         <soil>podzolic</soil>
         <color>yellow</color>
@@ -84,7 +84,7 @@
         <fruit_Form>round</fruit_Form>
     </wild_rose>
 
-    <wild_rose login="rose0007" wild_rose_sort="woodsii" >
+    <wild_rose id="rose0007" wild_rose_sort="woodsii" >
         <name>my Favorite Rose 7</name>
         <soil>podzolic</soil>
         <color>red</color>
