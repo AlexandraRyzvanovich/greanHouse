@@ -1,8 +1,8 @@
 package parser.domparser;
 
-
 import entity.*;
 import entity.enums.*;
+import exception.DomParserException;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -13,21 +13,16 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import parser.Parser;
 
 public class DomParser implements Parser {
     private List<Flower> flowers;
-    private DocumentBuilder docBuilder;
+
     public DomParser() {
         this.flowers = new ArrayList<>();
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        try {
-            docBuilder = factory.newDocumentBuilder();
-        } catch (ParserConfigurationException e) {
-            System.err.println("Ошибка конфигурации парсера: " + e);
-        }
     }
 
     public List<Flower> getFlowers() {
@@ -35,40 +30,42 @@ public class DomParser implements Parser {
     }
 
     @Override
-    public List<Flower> parse(String fileName) {
+    public List<Flower> parse(String fileName) throws DomParserException {
         try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = factory.newDocumentBuilder();
             Document doc = docBuilder.parse(fileName);
             Element root = doc.getDocumentElement();
-            NodeList flowersList = root.getElementsByTagName(ROSE_TAG_NAME);
-            for (int i = 0; i < flowersList.getLength(); i++) {
-                Element flowerElement = (Element) flowersList.item(i);
+            NodeList roseList = root.getElementsByTagName(ROSE_TAG_NAME);
+            for (int i = 0; i < roseList.getLength(); i++) {
+                Element flowerElement = (Element) roseList.item(i);
                 Flower flower = buildRose(flowerElement);
                 flowers.add(flower);
             }
-            NodeList flowersList2 = root.getElementsByTagName(WILD_ROSE_TAG_NAME);
-            for (int i = 0; i < flowersList2.getLength(); i++) {
-                Element flowerElement = (Element) flowersList2.item(i);
+
+            NodeList wildRosesList = root.getElementsByTagName(WILD_ROSE_TAG_NAME);
+            for (int i = 0; i < wildRosesList.getLength(); i++) {
+                Element flowerElement = (Element) wildRosesList.item(i);
                 Flower flower = buildWildRose(flowerElement);
                 flowers.add(flower);
             }
-            NodeList flowersList3 = root.getElementsByTagName(GARDEN_ROSE_TAG_NAME);
-            for (int i = 0; i < flowersList3.getLength(); i++) {
-                Element flowerElement = (Element) flowersList3.item(i);
+
+            NodeList gardenRoseList = root.getElementsByTagName(GARDEN_ROSE_TAG_NAME);
+            for (int i = 0; i < gardenRoseList.getLength(); i++) {
+                Element flowerElement = (Element) gardenRoseList.item(i);
                 Flower flower = buildGardenRose(flowerElement);
                 flowers.add(flower);
             }
-            NodeList flowersList4 = root.getElementsByTagName(HYBRID_ROSE_TAG_NAME);
-            for (int i = 0; i < flowersList4.getLength(); i++) {
-                Element flowerElement = (Element) flowersList4.item(i);
+            NodeList hybridRoseList = root.getElementsByTagName(HYBRID_ROSE_TAG_NAME);
+            for (int i = 0; i < hybridRoseList.getLength(); i++) {
+                Element flowerElement = (Element) hybridRoseList.item(i);
                 Flower flower = buildHybridRose(flowerElement);
                 flowers.add(flower);
             }
-
-
         } catch (IOException e) {
-            System.err.println("File error or I/O error: " + e);
-        } catch (SAXException e) {
-            System.err.println("Parsing failure: " + e);
+            throw new DomParserException("Exception occurred while parsing file because", e.getCause());
+        } catch (SAXException | ParserConfigurationException e) {
+            throw new DomParserException ("Exception in Dom parser occurred", e.getCause());
         }
         return flowers;
     }
@@ -80,13 +77,18 @@ public class DomParser implements Parser {
         return flower;
     }
 
-    private Flower buildHybridRose(Element flowerElement){
+    private Flower buildHybridRose(Element flowerElement) {
         Flower hybridRose = new HybridRose();
         buildFlower(hybridRose, flowerElement);
 
-        String hybridRoseSortAttr = flowerElement.getAttribute(HYBRID_ROSE_SUBSORT_ATTR_NAME);
-        HybridRoseSubSort hybridRoseSubSort = HybridRoseSubSort.valueOf(hybridRoseSortAttr);
+        HybridRoseSubSort hybridRoseSubSort = null;
+        if (flowerElement.hasAttribute(HYBRID_ROSE_SUBSORT_ATTR_NAME)) {
+            String hybridRoseSortAttr = flowerElement.getAttribute(HYBRID_ROSE_SUBSORT_ATTR_NAME);
+            String hybridRoseSortUpperCase = hybridRoseSortAttr.toUpperCase();
+            hybridRoseSubSort = HybridRoseSubSort.valueOf(hybridRoseSortUpperCase);
+        }
         ((HybridRose) hybridRose).setHybridRoseSubSort(hybridRoseSubSort);
+
         String yearOfSelectionElement = getElementTextContent(flowerElement, YEAR_OF_SELECTION_ELEMENT_NAME);
         int yearOfSelection = Integer.parseInt(yearOfSelectionElement);
         ((HybridRose) hybridRose).setYearOfSelection(yearOfSelection);
@@ -94,59 +96,76 @@ public class DomParser implements Parser {
         return hybridRose;
     }
 
-    private Flower buildGardenRose(Element flowerElement){
+    private Flower buildGardenRose(Element flowerElement) {
         Flower gardenRose = new GardenRose();
         buildFlower(gardenRose, flowerElement);
 
         String bushTypeElement = getElementTextContent(flowerElement, BUSH_TYPE_ELEMENT_NAME);
-        bushTypeElement.toUpperCase();
-        BushType bushType = BushType.valueOf(bushTypeElement);
+        String bushTypeElementUpperCase = bushTypeElement.toUpperCase();
+        BushType bushType = BushType.valueOf(bushTypeElementUpperCase);
         ((GardenRose) gardenRose).setBushType(bushType);
-        String gardenRoseSortElement = flowerElement.getAttribute(GARDEN_ROSE_SORT_ATTR_NAME).toUpperCase();
-        gardenRoseSortElement.toUpperCase();
-        GardenRoseSort gardenRoseSort = GardenRoseSort.valueOf(gardenRoseSortElement);
+
+        GardenRoseSort gardenRoseSort = null;
+        if (flowerElement.hasAttribute(GARDEN_ROSE_SORT_ATTR_NAME)) {
+            String gardenRoseSortElement = flowerElement.getAttribute(GARDEN_ROSE_SORT_ATTR_NAME);
+            String gardenRoseSortUpperCase = gardenRoseSortElement.toUpperCase();
+            gardenRoseSort = GardenRoseSort.valueOf(gardenRoseSortUpperCase);
+        }
         ((GardenRose) gardenRose).setGardenRoseSort(gardenRoseSort);
 
         return gardenRose;
     }
 
-    private Flower buildWildRose(Element flowerElement){
+    private Flower buildWildRose(Element flowerElement) {
         Flower wildRose = new WildRose();
         buildFlower(wildRose, flowerElement);
 
         String fruitForm = getElementTextContent(flowerElement, FRUIT_FORM_ELEMENT_NAME);
         ((WildRose) wildRose).setFruitForm(fruitForm);
-        String wildRoseSortAttr = flowerElement.getAttribute(WILD_ROSE_SORT_ATR_NAME).toUpperCase();
-        wildRoseSortAttr.toUpperCase();
-        WildRoseSort wildRoseSort = WildRoseSort.valueOf(wildRoseSortAttr);
-        ((WildRose) wildRose).setWildRoseSort(wildRoseSort);
+
+        WildRoseSort wildRoseSort = null;
+        if (flowerElement.hasAttribute(WILD_ROSE_SORT_ATR_NAME)) {
+            String wildRoseSortAttr = flowerElement.getAttribute(WILD_ROSE_SORT_ATR_NAME);
+            String wildRoseSortUpperCase = wildRoseSortAttr.toUpperCase();
+            wildRoseSort = WildRoseSort.valueOf(wildRoseSortUpperCase);
+        }
+            ((WildRose) wildRose).setWildRoseSort(wildRoseSort);
 
         return wildRose;
     }
 
-
-
-    private Flower buildFlower(Flower flower, Element flowerElement){
+    private Flower buildFlower(Flower flower, Element flowerElement) {
         String login = flowerElement.getAttribute(LOGIN_ATTR_NAME);
         flower.setLogin(login);
-        String name = getElementTextContent(flowerElement,NAME_ELEMENT_NAME);
+
+        String name = getElementTextContent(flowerElement, NAME_ELEMENT_NAME);
         flower.setName(name);
-        String colorElement = getElementTextContent(flowerElement, COLOR_ELEMENT_NAME).toUpperCase();
-        Color color = Color.valueOf(colorElement);
+
+        String colorElement = getElementTextContent(flowerElement, COLOR_ELEMENT_NAME);
+        String colorElementUpperCase = colorElement.toUpperCase();
+        Color color = Color.valueOf(colorElementUpperCase);
         flower.setColor(color);
-        String soilElement = getElementTextContent(flowerElement, SOIL_ELEMENT_NAME).toUpperCase();;
-        Soil soil = Soil.valueOf(soilElement);
+
+        String soilElement = getElementTextContent(flowerElement, SOIL_ELEMENT_NAME);
+        String soilElementUpperCase = soilElement.toUpperCase();
+        Soil soil = Soil.valueOf(soilElementUpperCase);
         flower.setSoil(soil);
-        String multiplyingElement = getElementTextContent(flowerElement, MULTIPLYING_ELEMENT_NAME).toUpperCase();;
-        Multiplying multiplying = Multiplying.valueOf(multiplyingElement);
+
+        String multiplyingElement = getElementTextContent(flowerElement, MULTIPLYING_ELEMENT_NAME);
+        String multiplyingElementUpperCase = multiplyingElement.toUpperCase();
+        Multiplying multiplying = Multiplying.valueOf(multiplyingElementUpperCase);
         flower.setMultiplying(multiplying);
+
         String growingTips = getElementTextContent(flowerElement, GROWING_TIPS_ELEMENT_NAME);
         flower.setGrowingTips(growingTips);
+
         String budType = getElementTextContent(flowerElement, BUD_TYPE_ELEMENT_NAME);
         ((Rose) flower).setBudType(budType);
+
         String petalQuantityElement = getElementTextContent(flowerElement, PETAL_QUANTITY_ELEMENT_NAME);
         int petalQuantity = Integer.parseInt(petalQuantityElement);
         ((Rose) flower).setPetalQuantity(petalQuantity);
+
         String blossomTime = getElementTextContent(flowerElement, BLOSSOM_TIME_ELEMENT_NAME);
         ((Rose) flower).setBlossomTime(blossomTime);
 

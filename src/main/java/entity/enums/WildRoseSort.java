@@ -4,7 +4,7 @@ public enum WildRoseSort {
     BRACTEATA("bracteata rose"),
     FOLIOLOSA("foliolosa rose"),
     RUGOSA("rugosa rose"),
-    WOODSII("woodsii rose");
+    WOODSII("woodsii");
 
     private String value;
 

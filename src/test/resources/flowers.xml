@@ -83,7 +83,8 @@
         <bud_type>round with inside round bud</bud_type>
         <fruit_Form>round</fruit_Form>
     </wild_rose>
-    <wild_rose login="rose0007" wild_rose_sort="foliolosa" >
+
+    <wild_rose login="rose0007" wild_rose_sort="woodsii" >
         <name>my Favorite Rose 7</name>
         <soil>podzolic</soil>
         <color>red</color>

@@ -123,7 +123,7 @@
                             <enumeration value="rugosa"/>
                             <enumeration value="bracteata"/>
                             <enumeration value="foliolosa"/>
-                            <enumeration value="woolsii"/>
+                            <enumeration value="woodsii"/>
                         </restriction>
                     </simpleType>
                 </attribute>

@@ -1,5 +1,6 @@
 package parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface Parser<Flower> {
@@ -23,6 +24,8 @@ public interface Parser<Flower> {
     public final String GARDEN_ROSE_SORT_ATTR_NAME = "garden_rose_sort";
     public final String HYBRID_ROSE_SUBSORT_ATTR_NAME = "hybrid_rose_subSort";
     public final String WILD_ROSE_SORT_ATR_NAME = "wild_rose_sort";
+
+    public List<String> CONST_LIST = new ArrayList<>();
 
     List<Flower> parse(String path);
 }
