@@ -7,6 +7,7 @@ import entity.enums.Soil;
 import javax.xml.bind.annotation.*;
 import java.util.Objects;
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "rose", namespace = "http://www.epam.com/flowers")
 @XmlType(name = "Rose", propOrder = {
         "blossomTime",
         "petalQuantity",

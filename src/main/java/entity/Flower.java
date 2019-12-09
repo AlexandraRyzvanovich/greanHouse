@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.Objects;
 
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "flower", namespace = "http://www.epam.com/flowers")
 @XmlType(name = "Flower", propOrder = {
         "name",
         "soil",
@@ -22,17 +23,17 @@ import java.util.Objects;
 })
 public abstract class Flower {
 
-    @XmlElement(required = true)
+    @XmlElement(name = "name", required = true)
     private String name;
-    @XmlElement(required = true)
+    @XmlElement(name = "soil", required = true)
     @XmlSchemaType(name = "string")
     private Soil soil;
-    @XmlElement(required = true)
+    @XmlElement(name = "color", required = true)
     @XmlSchemaType(name = "string")
     private Color color;
     @XmlElement(name = "growing_tips", required = true)
     protected String growingTips;
-    @XmlElement(required = true)
+    @XmlElement(name = "multiplying",required = true)
     @XmlSchemaType(name = "string")
     private Multiplying multiplying;
     @XmlAttribute(name = "login", required = true)

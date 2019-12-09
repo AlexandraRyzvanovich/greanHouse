@@ -12,9 +12,9 @@
 
     <element name="flower" type="tns:Flower" abstract="true"/>
     <element name="rose" type="tns:Rose" substitutionGroup="tns:flower"/>
-    <element name="hybrid_rose" type="tns:Hybrid_Rose" substitutionGroup="tns:rose"/>
-    <element name="garden_rose" type="tns:Garden_Rose" substitutionGroup="tns:rose"/>
-    <element name="wild_rose" type="tns:Wild_Rose" substitutionGroup="tns:rose"/>
+    <element name="hybrid_rose" type="tns:Hybrid_rose" substitutionGroup="tns:rose"/>
+    <element name="garden_rose" type="tns:Garden_rose" substitutionGroup="tns:rose"/>
+    <element name="wild_rose" type="tns:Wild_rose" substitutionGroup="tns:rose"/>
 
     <complexType name="Flower">
         <sequence>
@@ -65,69 +65,66 @@
         </complexContent>
     </complexType>
 
-    <complexType name="Hybrid_Rose">
+    <complexType name="Hybrid_rose">
         <complexContent>
             <extension base="tns:Rose">
                 <sequence>
                     <element name="year_of_selection" type="int"/>
                 </sequence>
-                <attribute name="hybrid_rose_subSort" default="large">
-                    <simpleType>
-                        <restriction base="string">
-                            <enumeration value="large"/>
-                            <enumeration value="cluster"/>
-                            <enumeration value="hybrid"/>
-                        </restriction>
-                    </simpleType>
+                <attribute name="hybrid_rose_subSort" default="large" type="tns:Hybrid_rose_Subsort">
                 </attribute>
-
             </extension>
         </complexContent>
     </complexType>
+    <simpleType name = "Hybrid_rose_Subsort">
+        <restriction base="string">
+            <enumeration value="large"/>
+            <enumeration value="cluster"/>
+            <enumeration value="hybrid"/>
+        </restriction>
+    </simpleType>
 
-    <complexType name="Garden_Rose">
+    <complexType name="Garden_rose">
         <complexContent>
             <extension base="tns:Rose">
                 <sequence>
-                    <element name="bush_type">
-                        <simpleType>
-                            <restriction base="string">
-                                <enumeration value="single"/>
-                                <enumeration value="climbing"/>
-                            </restriction>
-                        </simpleType>
-                    </element>
+                    <element name="bush_type" type = "tns:Bush_type"/>
                 </sequence>
-                <attribute name="garden_rose_sort" default="banky">
-                    <simpleType>
-                        <restriction base="string">
-                            <enumeration value="rescht"/>
-                            <enumeration value="fransis"/>
-                            <enumeration value="banky"/>
-                        </restriction>
-                    </simpleType>
+                <attribute name="garden_rose_sort" default="banky" type="tns:Garden_rose_sort">
                 </attribute>
             </extension>
         </complexContent>
     </complexType>
+    <simpleType name ="Bush_type">
+        <restriction base="string">
+            <enumeration value="single"/>
+            <enumeration value="climbing"/>
+        </restriction>
+    </simpleType>
+    <simpleType name ="Garden_rose_sort">
+        <restriction base="string">
+            <enumeration value="rescht"/>
+            <enumeration value="fransis"/>
+            <enumeration value="banky"/>
+        </restriction>
+    </simpleType>
 
-    <complexType name="Wild_Rose">
+    <complexType name="Wild_rose">
         <complexContent>
             <extension base="tns:Rose">
                 <sequence>
                     <element name="fruit_Form" type="string"/>
                 </sequence>
-                <attribute name="wild_rose_sort" default="rugosa">
-                    <simpleType>
-                        <restriction base="string">
-                            <enumeration value="rugosa"/>
-                            <enumeration value="bracteata"/>
-                            <enumeration value="foliolosa"/>
-                            <enumeration value="woodsii"/>
-                        </restriction>
-                    </simpleType>
-                </attribute>
+                <attribute name="wild_rose_sort" default="rugosa" type="tns:Wild_rose_sort"/>
             </extension>
         </complexContent>
     </complexType>
+    <simpleType name="Wild_rose_sort" >
+        <restriction base="string">
+            <enumeration value="rugosa"/>
+            <enumeration value="bracteata"/>
+            <enumeration value="foliolosa"/>
+            <enumeration value="woodsii"/>
+        </restriction>
+    </simpleType>
 </schema>

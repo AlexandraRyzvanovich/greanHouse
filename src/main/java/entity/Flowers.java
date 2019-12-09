@@ -8,10 +8,12 @@ import java.util.ArrayList;
 
 @XmlRootElement(name = "flowers")
 public class Flowers {
-    @XmlElementRef(name = "rose", namespace = "http://www.epam.com/flowers", type = JAXBElement.class)
+    @XmlElementRefs(value = {@XmlElementRef(name = "rose"),
+            @XmlElementRef(name = "hybrid_rose"),
+            @XmlElementRef(name = "wild_rose"),
+            @XmlElementRef(name = "garden_rose")})
     private ArrayList<Flower> list = new ArrayList<>();
         public Flowers() {
-
         }
         public void setList(ArrayList<Flower> list) {
             this.list = list;

@@ -6,7 +6,8 @@ import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Garden-Rose", propOrder = {
+@XmlRootElement(name = "garden_rose", namespace = "http://www.epam.com/flowers")
+@XmlType(name = "Garden_rose", propOrder = {
         "bushType"
 })
 public class GardenRose extends Rose {

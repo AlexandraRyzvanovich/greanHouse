@@ -10,7 +10,8 @@ import javax.xml.bind.annotation.*;
 import java.util.Objects;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Wild-Rose", propOrder = {
+@XmlRootElement(name = "wild_rose", namespace = "http://www.epam.com/flowers")
+@XmlType(name = "Wild_rose", propOrder = {
         "fruitForm"
 })
 public class WildRose extends Rose {

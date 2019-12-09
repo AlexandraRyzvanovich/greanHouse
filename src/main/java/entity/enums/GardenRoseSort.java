@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name = "garden_rose_type")
+@XmlType(name = "Garden_rose_type")
 @XmlEnum
 public enum GardenRoseSort {
     @XmlEnumValue("rescht")

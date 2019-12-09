@@ -10,12 +10,13 @@ import java.util.Objects;
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Hybrid-Rose", propOrder = {
+@XmlRootElement(name = "hybrid_rose", namespace = "http://www.epam.com/flowers")
+@XmlType(name = "Hybrid_Rose", propOrder = {
         "yearOfSelection"
 })
 public class HybridRose extends Rose {
 
-    @XmlElement(name = "year_of_selection")
+    @XmlElement(name = "year_of_selection", required = true)
     private int yearOfSelection;
     @XmlAttribute(name = "hybrid_rose_subSort")
     private HybridRoseSubSort hybridRoseSubSort;
