@@ -13,8 +13,10 @@ public class Flowers {
             @XmlElementRef(name = "wild_rose"),
             @XmlElementRef(name = "garden_rose")})
     private List<Flower> listFlowers = new ArrayList<>();
+
         public Flowers() {
         }
+
         public void setList(ArrayList<Flower> list) {
             this.listFlowers = list;
         }
@@ -23,10 +25,6 @@ public class Flowers {
         }
         public List<Flower> getListFlowers(){
             return listFlowers;
-        }
-        @Override
-        public String toString() {
-            return "Flowers [list=" + listFlowers + "]";
         }
 }
 
