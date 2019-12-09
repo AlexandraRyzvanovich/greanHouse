@@ -5,7 +5,7 @@ import com.epam.entity.enums.Multiplying;
 import com.epam.entity.enums.Soil;
 
 import javax.xml.bind.annotation.*;
-import java.util.Objects;
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "rose", namespace = "http://www.epam.com/flowers")
 @XmlType(name = "Rose", propOrder = {
@@ -27,7 +27,8 @@ public class Rose extends Flower {
     @XmlElement(name = "bud_type", required = true)
     private String budType;
 
-    public Rose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, String blossomTime, int petalQuantity, String budType) {
+    public Rose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
+                String blossomTime, int petalQuantity, String budType) {
         super(id, name, soil, color, growingTips, multiplying);
         this.blossomTime = blossomTime;
         this.petalQuantity = petalQuantity;
@@ -64,10 +65,19 @@ public class Rose extends Flower {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Rose)) return false;
-        if (!super.equals(o)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (getClass() != o.getClass()) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
         Rose rose = (Rose) o;
+        if ( rose.blossomTime == null || rose.budType == null) {
+            return false;
+        }
         return getPetalQuantity() == rose.getPetalQuantity() &&
                 getBlossomTime().equals(rose.getBlossomTime()) &&
                 getBudType().equals(rose.getBudType());
@@ -75,15 +85,11 @@ public class Rose extends Flower {
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getBlossomTime(), getPetalQuantity(), getBudType());
-    }
-
-    @Override
-    public String toString() {
-        return "Rose{" +
-                "blossomTime='" + blossomTime + '\'' +
-                ", petalQuantity=" + petalQuantity +
-                ", budType='" + budType + '\'' +
-                '}';
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + blossomTime.hashCode();
+        result = prime * result + budType.hashCode();
+        result = prime * result + petalQuantity;
+        return result;
     }
 }

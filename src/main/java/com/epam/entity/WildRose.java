@@ -5,9 +5,7 @@ import com.epam.entity.enums.Multiplying;
 import com.epam.entity.enums.Soil;
 import com.epam.entity.enums.WildRoseSort;
 
-
 import javax.xml.bind.annotation.*;
-import java.util.Objects;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name = "wild_rose", namespace = "http://www.epam.com/flowers")
@@ -29,7 +27,6 @@ public class WildRose extends Rose {
     }
 
     public WildRose() {
-
     }
 
     public WildRoseSort getWildRoseSort() {
@@ -37,9 +34,9 @@ public class WildRose extends Rose {
     }
 
     public void setWildRoseSort(WildRoseSort wildRoseSort) {
-        if(wildRoseSort == null){
+        if (wildRoseSort == null) {
             this.wildRoseSort = WildRoseSort.FOLIOLOSA;
-        }else {
+        } else {
             this.wildRoseSort = wildRoseSort;
         }
     }
@@ -54,24 +51,30 @@ public class WildRose extends Rose {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof WildRose)) return false;
-        if (!super.equals(o)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof WildRose)) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
         WildRose wildRose = (WildRose) o;
+        if (wildRose.fruitForm == null || wildRose.wildRoseSort == null) {
+            return false;
+        }
         return getWildRoseSort() == wildRose.getWildRoseSort() &&
                 getFruitForm().equals(wildRose.getFruitForm());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getWildRoseSort(), getFruitForm());
-    }
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + fruitForm.hashCode();
+        result = prime * result + wildRoseSort.hashCode();
 
-    @Override
-    public String toString() {
-        return "WildRose{" +
-                "wildRoseSort=" + wildRoseSort +
-                ", fruitForm='" + fruitForm + '\'' +
-                '}';
+        return result;
     }
 }
