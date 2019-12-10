@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface Parser<Flower> {
-    public final String FLOWERS_TAG_NAME = "flowers";
+    String FLOWERS_TAG_NAME = "flowers";
     public final String ROSE_TAG_NAME = "rose";
     public final String GARDEN_ROSE_TAG_NAME = "garden_rose";
     public final String WILD_ROSE_TAG_NAME = "wild_rose";
