@@ -1,4 +1,4 @@
-package com.epam.errorHandler;
+package com.epam.errorhandler;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

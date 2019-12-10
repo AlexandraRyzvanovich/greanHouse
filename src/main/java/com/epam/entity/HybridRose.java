@@ -79,4 +79,12 @@ public class HybridRose extends Rose {
 
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "HybridRose{" +
+                "yearOfSelection=" + yearOfSelection +
+                ", hybridRoseSubSort=" + hybridRoseSubSort +
+                '}';
+    }
 }

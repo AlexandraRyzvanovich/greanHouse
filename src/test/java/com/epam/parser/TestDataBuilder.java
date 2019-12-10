@@ -1,3 +1,5 @@
+package com.epam.parser;
+
 import com.epam.entity.*;
 import com.epam.entity.enums.*;
 
@@ -11,7 +13,7 @@ public class TestDataBuilder {
         listFlowers = new ArrayList<>();
     }
 
-    public List<Flower> buildTestData(){
+    public List<Flower> buildExpectedListFlowers(){
         Flower rose = new Rose("rose0000", "my Favorite Rose 0", Soil.PODZOLIC, Color.WHITE,
                 "not specified", Multiplying.SEEDS, "winter", 5, "round"  );
         listFlowers.add(rose);

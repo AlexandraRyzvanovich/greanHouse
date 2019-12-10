@@ -1,6 +1,6 @@
 package com.epam.validator;
 
-import com.epam.errorHandler.FlowerErrorHandler;
+import com.epam.errorhandler.FlowerErrorHandler;
 import com.epam.exception.ValidatorException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

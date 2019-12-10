@@ -26,8 +26,8 @@
 
     <garden_rose id="rose0002" >
         <name>my Favorite Rose 2</name>
-        <soil>podzolic</soil>
-        <color>white</color>
+        <soil>ground</soil>
+        <color>yellow</color>
         <growing_tips>not specified</growing_tips>
         <multiplying>seeds</multiplying>
         <blossom_time>middle summer</blossom_time>
@@ -39,7 +39,7 @@
     <garden_rose id="rose0003" garden_rose_sort="rescht" >
         <name>my Favorite Rose 3</name>
         <soil>podzolic</soil>
-        <color>red</color>
+        <color>pink</color>
         <growing_tips>not specified</growing_tips>
         <multiplying>leaves</multiplying>
         <blossom_time>spring</blossom_time>

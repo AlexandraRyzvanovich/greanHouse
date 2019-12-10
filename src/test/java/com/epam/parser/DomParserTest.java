@@ -10,14 +10,23 @@ import java.util.List;
 public class DomParserTest {
     private final String PATH_XML = "src/test/resources/flowers.xml";
     private DomParser domParser;
+    private TestDataBuilder testDataBuilder;
 
     @BeforeTest
     public void setUp(){
         domParser = new DomParser();
+        testDataBuilder = new TestDataBuilder();
     }
     @Test
     public void testDomParseShouldReturnListOfSizeEightWhenValidXmlFilePathGiven(){
+        //given
+        List<Flower> expectedListFlowers = testDataBuilder.buildExpectedListFlowers();
+        System.out.println(expectedListFlowers);
+        //when
         List<Flower> actualList = domParser.parse(PATH_XML);
+        System.out.println(actualList);
+        //then
         Assert.assertEquals(actualList.size(), 8);
+        Assert.assertEquals(actualList, expectedListFlowers);
     }
 }

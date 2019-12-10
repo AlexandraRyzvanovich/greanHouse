@@ -77,4 +77,12 @@ public class WildRose extends Rose {
 
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "WildRose{" +
+                "fruitForm='" + fruitForm + '\'' +
+                ", wildRoseSort=" + wildRoseSort +
+                '}';
+    }
 }

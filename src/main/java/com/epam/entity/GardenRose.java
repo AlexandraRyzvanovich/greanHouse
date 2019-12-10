@@ -79,4 +79,12 @@ public class GardenRose extends Rose {
         result = prime * result + gardenRoseSort.hashCode();
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "GardenRose{" +
+                "bushType=" + bushType +
+                ", gardenRoseSort=" + gardenRoseSort +
+                '}';
+    }
 }
