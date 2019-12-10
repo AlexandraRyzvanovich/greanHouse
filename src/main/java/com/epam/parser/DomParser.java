@@ -18,7 +18,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 public class DomParser implements Parser {
-    private List<Flower> flowers;
+    private final List<Flower> flowers;
 
     public DomParser() {
         this.flowers = new ArrayList<>();
@@ -35,12 +35,14 @@ public class DomParser implements Parser {
             DocumentBuilder docBuilder = factory.newDocumentBuilder();
             Document doc = docBuilder.parse(fileName);
             Element root = doc.getDocumentElement();
+
             NodeList roseList = root.getElementsByTagName(ROSE_TAG_NAME);
             for (int i = 0; i < roseList.getLength(); i++) {
                 Element flowerElement = (Element) roseList.item(i);
                 Flower flower = buildRose(flowerElement);
                 flowers.add(flower);
             }
+
 
             NodeList gardenRoseList = root.getElementsByTagName(GARDEN_ROSE_TAG_NAME);
             for (int i = 0; i < gardenRoseList.getLength(); i++) {
@@ -65,7 +67,7 @@ public class DomParser implements Parser {
         } catch (IOException e) {
             throw new ParserException("Exception occurred while parsing file because", e.getCause());
         } catch (SAXException | ParserConfigurationException e) {
-            throw new ParserException ("Exception in Dom com.epam.parser occurred", e.getCause());
+            throw new ParserException ("Exception in Dom parser occurred", e.getCause());
         }
         return flowers;
     }

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class SaxParser implements Parser {
     private List<Flower> flowers;
-    private FlowerHandler flowerHandler;
+    private final FlowerHandler flowerHandler;
     private XMLReader reader;
 
     public SaxParser() {

@@ -11,7 +11,7 @@ import java.util.*;
 import static com.epam.parser.Parser.*;
 
 public class FlowerHandler extends DefaultHandler {
-    private List<Flower> flowers;
+    private final List<Flower> flowers;
     private Flower rose = null;
     private String thisElement;
 

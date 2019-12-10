@@ -16,7 +16,7 @@ public class WildRose extends Rose {
 
     @XmlElement(name = "fruit_Form", required = true)
     private String fruitForm;
-    @XmlAttribute(name = "wild_rose_sort", required = false)
+    @XmlAttribute(name = "wild_rose_sort")
     private WildRoseSort wildRoseSort;
 
     public WildRose(String id, WildRoseSort wildRoseSort, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
@@ -81,13 +81,5 @@ public class WildRose extends Rose {
         result = prime * result + wildRoseSort.hashCode();
 
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "WildRose{" +
-                "fruitForm='" + fruitForm + '\'' +
-                ", wildRoseSort=" + wildRoseSort +
-                '}';
     }
 }

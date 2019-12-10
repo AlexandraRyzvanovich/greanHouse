@@ -139,16 +139,4 @@ public abstract class Flower {
         result = prime * result + soil.hashCode();
         return result;
     }
-
-    @Override
-    public String toString() {
-        return "Flower{" +
-                ", id='" + id + '\'' +
-                "name='" + name + '\'' +
-                ", soil=" + soil +
-                ", color=" + color +
-                ", growingTips='" + growingTips + '\'' +
-                ", multiplying=" + multiplying +
-                '}';
-    }
 }

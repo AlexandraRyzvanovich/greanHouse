@@ -1,5 +1,6 @@
 package com.epam.factory;
 
+import com.epam.entity.enums.ParserType;
 import com.epam.exception.ParserFactoryException;
 import com.epam.parser.DomParser;
 import com.epam.parser.JaxbParser;
@@ -8,7 +9,7 @@ import com.epam.parser.SaxParser;
 
 public class ParserFactory {
 
-    public Parser getParser(String typeParser) {
+    public Parser getParser(String typeParser) throws ParserFactoryException {
         ParserType type = ParserType.valueOf(typeParser.toUpperCase());
         switch (type) {
             case DOM:

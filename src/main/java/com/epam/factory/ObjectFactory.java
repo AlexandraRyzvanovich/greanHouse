@@ -1,4 +1,6 @@
-package com.epam.entity;
+package com.epam.factory;
+
+import com.epam.entity.*;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;

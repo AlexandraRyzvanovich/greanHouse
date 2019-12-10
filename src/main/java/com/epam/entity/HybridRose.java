@@ -16,7 +16,7 @@ public class HybridRose extends Rose {
 
     @XmlElement(name = "year_of_selection", required = true)
     private int yearOfSelection;
-    @XmlAttribute(name = "hybrid_rose_subSort", required = false)
+    @XmlAttribute(name = "hybrid_rose_subSort")
     private HybridRoseSubSort hybridRoseSubSort;
 
     public HybridRose(String id, HybridRoseSubSort hybridRoseSubSort, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
@@ -29,7 +29,7 @@ public class HybridRose extends Rose {
     public HybridRose() {
 
     }
-   
+
     public HybridRoseSubSort getHybridRoseSubSort() {
         if(hybridRoseSubSort == null) {
             return HybridRoseSubSort.LARGE;
@@ -81,13 +81,5 @@ public class HybridRose extends Rose {
         result = prime * result + yearOfSelection;
 
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "HybridRose{" +
-                "yearOfSelection=" + yearOfSelection +
-                ", hybridRoseSubSort=" + hybridRoseSubSort +
-                '}';
     }
 }

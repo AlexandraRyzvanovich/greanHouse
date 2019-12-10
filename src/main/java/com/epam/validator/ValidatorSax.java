@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class ValidatorSax {
-    private FlowerErrorHandler errorHandler;
+    private final FlowerErrorHandler errorHandler;
     private final String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
     private final SchemaFactory factory = SchemaFactory.newInstance(language);
     private static final Logger LOGGER = LogManager.getLogger();

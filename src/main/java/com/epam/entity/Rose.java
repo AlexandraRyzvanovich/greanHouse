@@ -93,13 +93,4 @@ public class Rose extends Flower {
         result = prime * result + petalQuantity;
         return result;
     }
-
-    @Override
-    public String toString() {
-        return "Rose{" +
-                "blossomTime='" + blossomTime + '\'' +
-                ", petalQuantity=" + petalQuantity +
-                ", budType='" + budType + '\'' +
-                '}';
-    }
 }

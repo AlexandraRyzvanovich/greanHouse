@@ -6,7 +6,7 @@ import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class FlowerErrorHandler extends DefaultHandler {
-    private Logger logger = LogManager.getLogger();
+    private final Logger logger = LogManager.getLogger();
 
     public void warning(SAXParseException e){
         logger.warn(getLineAddress(e) + "-" + e.getMessage());

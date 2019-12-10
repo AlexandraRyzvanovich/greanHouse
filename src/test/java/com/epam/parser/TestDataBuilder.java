@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestDataBuilder {
-    private List<Flower> listFlowers;
+    private final List<Flower> listFlowers;
 
     public TestDataBuilder() {
         listFlowers = new ArrayList<>();

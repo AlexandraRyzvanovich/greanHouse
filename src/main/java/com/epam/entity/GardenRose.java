@@ -17,7 +17,7 @@ public class GardenRose extends Rose {
 
     @XmlElement(name = "bush_type", required = true)
     private BushType bushType;
-    @XmlAttribute(name = "garden_rose_sort", required = false)
+    @XmlAttribute(name = "garden_rose_sort")
 
     private GardenRoseSort gardenRoseSort;
 
@@ -35,7 +35,6 @@ public class GardenRose extends Rose {
     public GardenRoseSort getGardenRoseSort() {
         if(gardenRoseSort == null){
             return GardenRoseSort.BANKY;
-
         }
         return gardenRoseSort;
     }
@@ -80,12 +79,5 @@ public class GardenRose extends Rose {
         result = prime * result + bushType.hashCode();
         result = prime * result + gardenRoseSort.hashCode();
         return result;
-    }
-    @Override
-    public String toString() {
-        return "GardenRose{" +
-                "bushType=" + bushType +
-                ", gardenRoseSort=" + gardenRoseSort +
-                '}';
     }
 }
