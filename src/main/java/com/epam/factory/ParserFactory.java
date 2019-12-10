@@ -5,13 +5,10 @@ import com.epam.parser.JaxbParser;
 import com.epam.parser.Parser;
 import com.epam.parser.SaxParser;
 
-public class FlowerFactory {
-    private enum TypeParser {
-        SAX, JAXB, DOM
-    }
+public class ParserFactory {
 
-    public Parser createStudentBuilder(String typeParser) {
-        TypeParser type = TypeParser.valueOf(typeParser.toUpperCase());
+    public Parser getParser(String typeParser) {
+        ParserType type = ParserType.valueOf(typeParser.toUpperCase());
         switch (type) {
             case DOM:
                 return new DomParser();
