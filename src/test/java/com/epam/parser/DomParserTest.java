@@ -21,10 +21,8 @@ public class DomParserTest {
     public void testDomParseShouldReturnListOfSizeEightWhenValidXmlFilePathGiven(){
         //given
         List<Flower> expectedListFlowers = testDataBuilder.buildExpectedListFlowers();
-        System.out.println(expectedListFlowers);
         //when
         List<Flower> actualList = domParser.parse(PATH_XML);
-        System.out.println(actualList);
         //then
         Assert.assertEquals(actualList.size(), 8);
         Assert.assertEquals(actualList, expectedListFlowers);

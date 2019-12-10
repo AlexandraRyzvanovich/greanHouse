@@ -1,5 +1,0 @@
-2019-12-10 13:45:19,310 WARN c.e.v.ValidatorSax [main] Validation failed becauses4s-elt-character: Non-whitespace characters are not allowed in schema elements other than 'xs:appinfo' and 'xs:documentation'. Saw 'my Favorite Rose 0'.
-2019-12-10 13:45:56,838 WARN c.e.v.ValidatorSax [main] Validation failed becauses4s-elt-character: Non-whitespace characters are not allowed in schema elements other than 'xs:appinfo' and 'xs:documentation'. Saw 'my Favorite Rose 0'.
-2019-12-10 13:52:44,960 WARN c.e.v.ValidatorSax [main] Validation failed becauses4s-elt-character: Non-whitespace characters are not allowed in schema elements other than 'xs:appinfo' and 'xs:documentation'. Saw 'my Favorite Rose 0'.
-2019-12-10 13:53:00,454 WARN c.e.v.ValidatorSax [main] Validation failed becauses4s-elt-character: Non-whitespace characters are not allowed in schema elements other than 'xs:appinfo' and 'xs:documentation'. Saw 'my Favorite Rose 0'.
-2019-12-10 13:53:55,188 WARN c.e.v.ValidatorSax [main] Validation failed becauses4s-elt-character: Non-whitespace characters are not allowed in schema elements other than 'xs:appinfo' and 'xs:documentation'. Saw 'my Favorite Rose 0'.

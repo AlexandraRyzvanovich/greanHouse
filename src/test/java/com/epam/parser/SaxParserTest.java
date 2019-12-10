@@ -22,14 +22,10 @@ public class SaxParserTest {
     public void testSaxParserShouldReturnTrueWhenCompareWithValidListFlowerObjects(){
         //given
         List<Flower> expectedListFLowers = testDataBuilder.buildExpectedListFlowers();
-        System.out.println(expectedListFLowers);
         //when
         List<Flower> actualListFLowers = saxParser.parse(PATH_XML);
-        System.out.println(actualListFLowers);
         //then
         Assert.assertEquals(actualListFLowers.size(), 8);
         Assert.assertEquals(actualListFLowers, expectedListFLowers);
     }
-
-
 }

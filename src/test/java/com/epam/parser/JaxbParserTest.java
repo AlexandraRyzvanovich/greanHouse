@@ -18,7 +18,6 @@ public class JaxbParserTest {
         testDataBuilder = new TestDataBuilder();
     }
 
-
     @Test
     public void testJaxbParserShouldReturnTrueWhenCompareWithValidExpectedListFlowers(){
         //given

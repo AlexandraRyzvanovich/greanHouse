@@ -13,7 +13,7 @@ import static com.epam.parser.Parser.*;
 public class FlowerHandler extends DefaultHandler {
     private List<Flower> flowers;
     private Flower rose = null;
-    private String thisElement = null;
+    private String thisElement;
 
     public FlowerHandler() {
         flowers = new ArrayList<>();
@@ -23,13 +23,13 @@ public class FlowerHandler extends DefaultHandler {
     }
 
     public void startElement(String uri, String localName, String qName, Attributes attrs) {
-
         switch (localName) {
-            case (Parser.ROSE_TAG_NAME):
+            case (ROSE_TAG_NAME): {
                 rose = new Rose();
                 rose.setLogin(attrs.getValue(0));
                 break;
-            case (HYBRID_ROSE_TAG_NAME):
+            }
+            case (HYBRID_ROSE_TAG_NAME): {
                 rose = new HybridRose();
                 rose.setLogin(attrs.getValue(0));
                 HybridRoseSubSort hybridRoseSubSort = null;
@@ -40,7 +40,8 @@ public class FlowerHandler extends DefaultHandler {
                 }
                 ((HybridRose) rose).setHybridRoseSubSort(hybridRoseSubSort);
                 break;
-            case (GARDEN_ROSE_TAG_NAME):
+            }
+            case (GARDEN_ROSE_TAG_NAME): {
                 rose = new GardenRose();
                 rose.setLogin(attrs.getValue(0));
                 if (attrs.getLength() == 2) {
@@ -49,7 +50,8 @@ public class FlowerHandler extends DefaultHandler {
                     ((GardenRose) rose).setGardenRoseSort(null);
                 }
                 break;
-            case (WILD_ROSE_TAG_NAME):
+            }
+            case (WILD_ROSE_TAG_NAME): {
                 rose = new WildRose();
                 rose.setLogin(attrs.getValue(0));
                 if (attrs.getLength() == 2) {
@@ -58,8 +60,11 @@ public class FlowerHandler extends DefaultHandler {
                     ((WildRose) rose).setWildRoseSort(null);
                 }
                 break;
-            default:
-                thisElement = qName;
+            }
+            default: {
+                thisElement = localName;
+                break;
+            }
         }
     }
 
@@ -77,7 +82,7 @@ public class FlowerHandler extends DefaultHandler {
 
     public void characters(char[] ch, int start, int length) {
         String s = new String(ch, start, length).trim();
-        if(thisElement != null) {
+        if(thisElement != null && !(s.isEmpty())) {
             switch (thisElement) {
                 case NAME_ELEMENT_NAME:
                     rose.setName(s);
@@ -104,21 +109,17 @@ public class FlowerHandler extends DefaultHandler {
                     ((Rose) rose).setBudType(s);
                     break;
                 case BUSH_TYPE_ELEMENT_NAME:
-                    System.out.println(rose);
                     ((GardenRose) rose).setBushType(BushType.valueOf(s.toUpperCase()));
                     break;
                 case YEAR_OF_SELECTION_ELEMENT_NAME:
-                    System.out.println(rose);
                     ((HybridRose) rose).setYearOfSelection(Integer.parseInt(s));
                     break;
                 case FRUIT_FORM_ELEMENT_NAME:
                     ((WildRose) rose).setFruitForm(s);
                     break;
                 default:
-                    new ParserException("fail,");
+                    throw new ParserException("not fount element");
             }
         }
-        thisElement = null;
     }
-
 }
