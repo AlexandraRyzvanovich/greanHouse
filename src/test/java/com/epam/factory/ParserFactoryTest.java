@@ -1,13 +1,13 @@
-package com.epam;
+package com.epam.factory;
 
-import com.epam.factory.ParserFactory;
 import com.epam.parser.DomParser;
 import com.epam.parser.Parser;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class parserFactory {
+public class ParserFactoryTest {
+    private final String VALID_PARSER_TYPE = "DOM";
     private ParserFactory factory;
 
     @BeforeClass
@@ -17,12 +17,9 @@ public class parserFactory {
 
     @Test
     public void testParserFactoryShouldReturnTrueWhenGivenStringEqualsEnumType(){
-        //given
-        String parserType = "DOM";
         //when
-        Parser parser = factory.getParser(parserType);
+        Parser parser = factory.getParser(VALID_PARSER_TYPE);
         //then
         Assert.assertEquals(parser.getClass(), DomParser.class);
     }
-
 }

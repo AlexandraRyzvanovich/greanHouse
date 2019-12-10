@@ -1,5 +1,6 @@
 package com.epam.factory;
 
+import com.epam.exception.ParserFactoryException;
 import com.epam.parser.DomParser;
 import com.epam.parser.JaxbParser;
 import com.epam.parser.Parser;
@@ -17,7 +18,7 @@ public class ParserFactory {
             case SAX:
                 return new SaxParser();
             default:
-                throw new EnumConstantNotPresentException (type.getDeclaringClass(), type.name());
+                throw new ParserFactoryException("No such parser type");
         }
     }
 }
