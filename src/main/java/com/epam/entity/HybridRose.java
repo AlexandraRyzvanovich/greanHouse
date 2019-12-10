@@ -58,7 +58,7 @@ public class HybridRose extends Rose {
         if (getClass() != o.getClass()) {
             return false;
         }
-        if (!super.equals(o)) {
+        if(!super.equals(o)){
             return false;
         }
         HybridRose hybridRose = (HybridRose) o;

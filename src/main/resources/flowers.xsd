@@ -18,7 +18,7 @@
 
     <complexType name="Flower">
         <sequence>
-            <element name="name" type="string"/>
+            <element name="name" type="string" />
             <element name="soil" type="tns:Soil"/>
             <element name="color" type="tns:Color"/>
             <element name="growing_tips" type="string"/>

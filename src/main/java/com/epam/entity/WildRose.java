@@ -57,7 +57,7 @@ public class WildRose extends Rose {
         if (!(o instanceof WildRose)) {
             return false;
         }
-        if (!super.equals(o)) {
+        if(!super.equals(o)){
             return false;
         }
         WildRose wildRose = (WildRose) o;

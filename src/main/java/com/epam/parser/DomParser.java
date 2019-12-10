@@ -42,23 +42,24 @@ public class DomParser implements Parser {
                 flowers.add(flower);
             }
 
-            NodeList wildRosesList = root.getElementsByTagName(WILD_ROSE_TAG_NAME);
-            for (int i = 0; i < wildRosesList.getLength(); i++) {
-                Element flowerElement = (Element) wildRosesList.item(i);
-                Flower flower = buildWildRose(flowerElement);
-                flowers.add(flower);
-            }
-
             NodeList gardenRoseList = root.getElementsByTagName(GARDEN_ROSE_TAG_NAME);
             for (int i = 0; i < gardenRoseList.getLength(); i++) {
                 Element flowerElement = (Element) gardenRoseList.item(i);
                 Flower flower = buildGardenRose(flowerElement);
                 flowers.add(flower);
             }
+
             NodeList hybridRoseList = root.getElementsByTagName(HYBRID_ROSE_TAG_NAME);
             for (int i = 0; i < hybridRoseList.getLength(); i++) {
                 Element flowerElement = (Element) hybridRoseList.item(i);
                 Flower flower = buildHybridRose(flowerElement);
+                flowers.add(flower);
+            }
+
+            NodeList wildRosesList = root.getElementsByTagName(WILD_ROSE_TAG_NAME);
+            for (int i = 0; i < wildRosesList.getLength(); i++) {
+                Element flowerElement = (Element) wildRosesList.item(i);
+                Flower flower = buildWildRose(flowerElement);
                 flowers.add(flower);
             }
         } catch (IOException e) {

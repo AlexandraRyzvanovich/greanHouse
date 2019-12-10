@@ -50,7 +50,6 @@ public class GardenRose extends Rose {
     public void setBushType(BushType bushType) {
         this.bushType = bushType;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -59,13 +58,11 @@ public class GardenRose extends Rose {
         if (getClass() != o.getClass()) {
             return false;
         }
-        if (!super.equals(o)) {
+        if(!super.equals(o)){
             return false;
         }
         GardenRose gardenRose = (GardenRose) o;
-        if (gardenRose.bushType == null || gardenRose.gardenRoseSort == null) {
-            return false;
-        }
+
         return getGardenRoseSort() == gardenRose.getGardenRoseSort() &&
                 getBushType() == gardenRose.getBushType();
     }
@@ -79,7 +76,6 @@ public class GardenRose extends Rose {
         result = prime * result + gardenRoseSort.hashCode();
         return result;
     }
-
     @Override
     public String toString() {
         return "GardenRose{" +

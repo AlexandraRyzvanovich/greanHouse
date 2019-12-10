@@ -9,6 +9,7 @@ public class FlowerFactory {
     private enum TypeParser {
         SAX, JAXB, DOM
     }
+
     public Parser createStudentBuilder(String typeParser) {
         TypeParser type = TypeParser.valueOf(typeParser.toUpperCase());
         switch (type) {

@@ -63,6 +63,7 @@ public class Rose extends Flower {
         this.budType = budType;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -71,7 +72,7 @@ public class Rose extends Flower {
         if (getClass() != o.getClass()) {
             return false;
         }
-        if (!super.equals(o)) {
+        if(!super.equals(o)){
             return false;
         }
         Rose rose = (Rose) o;

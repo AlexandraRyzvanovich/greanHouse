@@ -52,7 +52,7 @@ public abstract class Flower {
         this.id = id;
     }
 
-    public String getLogin() {
+    public String getId() {
         return id;
     }
 
@@ -109,17 +109,22 @@ public abstract class Flower {
             return false;
         }
         Flower flower = (Flower) o;
-        if (flower.name == null || flower.color == null ||
-            flower.growingTips == null | flower.id == null ||
-                flower.multiplying == null || flower.soil == null) {
+        if(!getId().equals(flower.getId())){
             return false;
         }
-        return getLogin().equals(flower.getLogin()) &&
-                getName().equals(flower.getName()) &&
-                getSoil() == flower.getSoil() &&
-                getColor() == flower.getColor() &&
-                getGrowingTips().equals(flower.getGrowingTips()) &&
-                getMultiplying() == flower.getMultiplying();
+        if(!getName().equals(flower.getName()) ){
+            return false;
+        }
+        if(!(getSoil() == flower.getSoil()) ){
+            return false;
+        }
+        if(! (getColor()== flower.getColor())){
+            return false;
+        }
+        if(! getGrowingTips().equals(flower.getGrowingTips())){
+            return false;
+        }
+        return getMultiplying() == (flower.getMultiplying());
     }
 
     @Override

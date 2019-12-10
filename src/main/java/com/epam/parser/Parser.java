@@ -9,7 +9,7 @@ public interface Parser<Flower> {
     public final String GARDEN_ROSE_TAG_NAME = "garden_rose";
     public final String WILD_ROSE_TAG_NAME = "wild_rose";
     public final String HYBRID_ROSE_TAG_NAME = "hybrid_rose";
-    public final String LOGIN_ATTR_NAME = "login";
+    public final String LOGIN_ATTR_NAME = "id";
     public final String NAME_ELEMENT_NAME = "name";
     public final String SOIL_ELEMENT_NAME = "soil";
     public final String COLOR_ELEMENT_NAME = "color";
