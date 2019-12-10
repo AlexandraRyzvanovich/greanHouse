@@ -3,7 +3,6 @@ package com.epam.parser;
 import java.util.List;
 
 public interface Parser<Flower> {
-    String FLOWERS_TAG_NAME = "flowers";
     String ROSE_TAG_NAME = "rose";
     String GARDEN_ROSE_TAG_NAME = "garden_rose";
     String WILD_ROSE_TAG_NAME = "wild_rose";

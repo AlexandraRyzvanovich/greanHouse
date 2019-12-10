@@ -42,27 +42,27 @@ public class ObjectFactory {
 
     @XmlElementDecl(namespace = "http://www.epam.com/flowers", name = "flower")
     public JAXBElement<Flower> createFlower(Flower value) {
-        return new JAXBElement<Flower>(_Flower_QNAME, Flower.class, null, value);
+        return new JAXBElement<>(_Flower_QNAME, Flower.class, null, value);
     }
 
     @XmlElementDecl(namespace = "http://www.epam.com/flowers", name = "rose", substitutionHeadNamespace = "http://www.epam.com/flowers", substitutionHeadName = "flower")
     public JAXBElement<Rose> createRose(Rose value) {
-        return new JAXBElement<Rose>(_Rose_QNAME, Rose.class, null, value);
+        return new JAXBElement<>(_Rose_QNAME, Rose.class, null, value);
     }
 
     @XmlElementDecl(namespace = "http://www.epam.com/flowers", name = "hybrid_rose", substitutionHeadNamespace = "http://www.epam.com/flowers", substitutionHeadName = "rose")
     public JAXBElement<HybridRose> createHybridRose(HybridRose value) {
-        return new JAXBElement<HybridRose>(_HybridRose_QNAME, HybridRose.class, null, value);
+        return new JAXBElement<>(_HybridRose_QNAME, HybridRose.class, null, value);
     }
 
     @XmlElementDecl(namespace = "http://www.epam.com/flowers", name = "garden_rose", substitutionHeadNamespace = "http://www.epam.com/flowers", substitutionHeadName = "rose")
     public JAXBElement<GardenRose> createGardenRose(GardenRose value) {
-        return new JAXBElement<GardenRose>(_GardenRose_QNAME, GardenRose.class, null, value);
+        return new JAXBElement<>(_GardenRose_QNAME, GardenRose.class, null, value);
     }
 
     @XmlElementDecl(namespace = "http://www.epam.com/flowers", name = "wild_rose", substitutionHeadNamespace = "http://www.epam.com/flowers", substitutionHeadName = "rose")
     public JAXBElement<WildRose> createWildRose(WildRose value) {
-        return new JAXBElement<WildRose>(_WildRose_QNAME, WildRose.class, null, value);
+        return new JAXBElement<>(_WildRose_QNAME, WildRose.class, null, value);
     }
 
 }

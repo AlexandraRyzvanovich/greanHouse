@@ -71,7 +71,7 @@
                 <sequence>
                     <element name="year_of_selection" type="int"/>
                 </sequence>
-                <attribute name="hybrid_rose_subSort" use = "optional" default="large" type="tns:Hybrid_rose_Subsort">
+                <attribute name="hybrid_rose_subSort" default="large" type="tns:Hybrid_rose_Subsort">
                 </attribute>
             </extension>
         </complexContent>
@@ -90,7 +90,7 @@
                 <sequence>
                     <element name="bush_type" type = "tns:Bush_type"/>
                 </sequence>
-                <attribute name="garden_rose_sort" use = "optional" default="banky" type="tns:Garden_rose_sort">
+                <attribute name="garden_rose_sort" default="banky" type="tns:Garden_rose_sort">
                 </attribute>
             </extension>
         </complexContent>
@@ -115,7 +115,7 @@
                 <sequence>
                     <element name="fruit_Form" type="string"/>
                 </sequence>
-                <attribute name="wild_rose_sort" use = "optional" default="rugosa" type="tns:Wild_rose_sort"/>
+                <attribute name="wild_rose_sort" default="rugosa" type="tns:Wild_rose_sort"/>
             </extension>
         </complexContent>
     </complexType>
