@@ -2,11 +2,11 @@ package com.epam.parser;
 
 import com.epam.entity.Flower;
 import com.epam.entity.Flowers;
-import com.epam.exception.JaxbParserException;
+import com.epam.exception.ParserException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
-import com.epam.parser.Parser;
+
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -22,7 +22,7 @@ public class JaxbParser implements Parser {
     private final String XSD_FILE_NAME = "flowers.xsd";
     public List<Flower> flowerList;
 
-    public List<Flower> parse(String path) throws JaxbParserException{
+    public List<Flower> parse(String path) throws ParserException {
         ClassLoader classLoader = this.getClass().getClassLoader();
         URL xsdSchema = classLoader.getResource(XSD_FILE_NAME);
         try {
@@ -31,7 +31,7 @@ public class JaxbParser implements Parser {
             SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             File schemaLocation;
             if(xsdSchema == null){
-                throw new JaxbParserException("XSD file not found");
+                throw new ParserException("XSD file not found");
             }else {
                 schemaLocation = new File(xsdSchema.getFile());
             }
@@ -42,7 +42,7 @@ public class JaxbParser implements Parser {
             flowerList = st.getListFlowers();
 
         } catch (JAXBException | SAXException e) {
-            throw new JaxbParserException("Impossible to parse file because ", e.getCause());
+            throw new ParserException("Impossible to parse file because ", e.getCause());
         }
         return flowerList;
     }

@@ -19,8 +19,8 @@ public class WildRose extends Rose {
     @XmlAttribute(name = "wild_rose_sort")
     private WildRoseSort wildRoseSort;
 
-    public WildRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
-                    String blossomTime, int petalQuantity, String budType, String fruitForm, WildRoseSort wildRoseSort) {
+    public WildRose(String id, WildRoseSort wildRoseSort, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
+                    String blossomTime, int petalQuantity, String budType, String fruitForm ) {
         super(id, name, soil, color, growingTips, multiplying, blossomTime, petalQuantity, budType);
         this.fruitForm = fruitForm;
         this.wildRoseSort = wildRoseSort;
@@ -35,7 +35,7 @@ public class WildRose extends Rose {
 
     public void setWildRoseSort(WildRoseSort wildRoseSort) {
         if (wildRoseSort == null) {
-            this.wildRoseSort = WildRoseSort.FOLIOLOSA;
+            this.wildRoseSort = WildRoseSort.RUGOSA;
         } else {
             this.wildRoseSort = wildRoseSort;
         }

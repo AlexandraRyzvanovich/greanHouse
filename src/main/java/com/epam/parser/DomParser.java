@@ -2,7 +2,7 @@ package com.epam.parser;
 
 import com.epam.entity.*;
 import com.epam.entity.enums.*;
-import com.epam.exception.DomParserException;
+import com.epam.exception.ParserException;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -29,7 +29,7 @@ public class DomParser implements Parser {
     }
 
     @Override
-    public List<Flower> parse(String fileName) throws DomParserException {
+    public List<Flower> parse(String fileName) throws ParserException {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = factory.newDocumentBuilder();
@@ -62,9 +62,9 @@ public class DomParser implements Parser {
                 flowers.add(flower);
             }
         } catch (IOException e) {
-            throw new DomParserException("Exception occurred while parsing file because", e.getCause());
+            throw new ParserException("Exception occurred while parsing file because", e.getCause());
         } catch (SAXException | ParserConfigurationException e) {
-            throw new DomParserException ("Exception in Dom com.epam.parser occurred", e.getCause());
+            throw new ParserException ("Exception in Dom com.epam.parser occurred", e.getCause());
         }
         return flowers;
     }

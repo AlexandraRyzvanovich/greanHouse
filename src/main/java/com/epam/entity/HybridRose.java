@@ -19,8 +19,8 @@ public class HybridRose extends Rose {
     @XmlAttribute(name = "hybrid_rose_subSort")
     private HybridRoseSubSort hybridRoseSubSort;
 
-    public HybridRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
-                      String blossomTime, int petalQuantity, String budType, int yearOfSelection, HybridRoseSubSort hybridRoseSubSort) {
+    public HybridRose(String id, HybridRoseSubSort hybridRoseSubSort, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
+                      String blossomTime, int petalQuantity, String budType, int yearOfSelection ) {
         super(id, name, soil, color, growingTips, multiplying, blossomTime, petalQuantity, budType);
         this.yearOfSelection = yearOfSelection;
         this.hybridRoseSubSort = hybridRoseSubSort;

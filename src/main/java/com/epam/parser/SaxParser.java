@@ -1,6 +1,7 @@
 package com.epam.parser;
 
 import com.epam.entity.Flower;
+import com.epam.exception.ParserException;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
@@ -12,14 +13,9 @@ public class SaxParser implements Parser {
     private List<Flower> flowers;
     private FlowerHandler flowerHandler;
     private XMLReader reader;
+
     public SaxParser() {
         flowerHandler = new FlowerHandler();
-        try{
-            reader = XMLReaderFactory.createXMLReader();
-            reader.setContentHandler(flowerHandler);
-        }catch (SAXException e) {
-            System.err.print("ошибка SAX парсера: " + e);
-        }
     }
 
     public List<Flower> getFlowers() {
@@ -27,13 +23,13 @@ public class SaxParser implements Parser {
     }
 
     @Override
-    public List<Flower> parse(String fileName) {
+    public List<Flower> parse(String fileName) throws ParserException {
         try {
+            reader = XMLReaderFactory.createXMLReader();
+            reader.setContentHandler(flowerHandler);
             reader.parse(fileName);
-        } catch (SAXException e) {
-            System.err.print("ошибка SAX парсера: " + e);
-        } catch (IOException e) {
-            System.err.print("ошибка I/О потока: " + e);
+        } catch (SAXException | IOException e) {
+            throw new ParserException("Sax parser failed because", e.getCause());
         }
         flowers = flowerHandler.getFlowers();
         return flowers;

@@ -20,8 +20,8 @@ public class GardenRose extends Rose {
     @XmlAttribute(name = "garden_rose_sort")
     private GardenRoseSort gardenRoseSort;
 
-    public GardenRose(String id, String name, Soil soil, Color color, String growingTips, Multiplying multiplying, String blossomTime,
-                      int petalQuantity, String budType, BushType bushType, GardenRoseSort gardenRoseSort) {
+    public GardenRose(String id, GardenRoseSort gardenRoseSort, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
+                      String blossomTime, int petalQuantity,  String budType, BushType bushType) {
         super(id, name, soil, color, growingTips, multiplying, blossomTime, petalQuantity, budType);
         this.bushType = bushType;
         this.gardenRoseSort = gardenRoseSort;
