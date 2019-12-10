@@ -16,7 +16,7 @@ public class WildRose extends Rose {
 
     @XmlElement(name = "fruit_Form", required = true)
     private String fruitForm;
-    @XmlAttribute(name = "wild_rose_sort")
+    @XmlAttribute(name = "wild_rose_sort", required = false)
     private WildRoseSort wildRoseSort;
 
     public WildRose(String id, WildRoseSort wildRoseSort, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
@@ -30,7 +30,12 @@ public class WildRose extends Rose {
     }
 
     public WildRoseSort getWildRoseSort() {
-        return wildRoseSort;
+
+        if(wildRoseSort == null){
+            return WildRoseSort.RUGOSA;
+        }else {
+            return wildRoseSort;
+        }
     }
 
     public void setWildRoseSort(WildRoseSort wildRoseSort) {

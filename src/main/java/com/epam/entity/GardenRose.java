@@ -17,7 +17,8 @@ public class GardenRose extends Rose {
 
     @XmlElement(name = "bush_type", required = true)
     private BushType bushType;
-    @XmlAttribute(name = "garden_rose_sort")
+    @XmlAttribute(name = "garden_rose_sort", required = false)
+
     private GardenRoseSort gardenRoseSort;
 
     public GardenRose(String id, GardenRoseSort gardenRoseSort, String name, Soil soil, Color color, String growingTips, Multiplying multiplying,
@@ -32,6 +33,10 @@ public class GardenRose extends Rose {
     }
 
     public GardenRoseSort getGardenRoseSort() {
+        if(gardenRoseSort == null){
+            return GardenRoseSort.BANKY;
+
+        }
         return gardenRoseSort;
     }
 
